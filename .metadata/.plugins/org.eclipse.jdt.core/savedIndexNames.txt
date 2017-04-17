@@ -30,7 +30,6 @@ INDEX VERSION 1.127+C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\.me
 2193500410.index
 1540458648.index
 1049296085.index
-2915850975.index
 3296043690.index
 342059401.index
 928043000.index
