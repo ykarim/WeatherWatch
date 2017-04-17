@@ -1,0 +1,8 @@
+package network;
+
+public class WeatherAccess {
+	
+	public static void getCurrentWeatherDataByName(String cityName) {
+		NetworkConnect.getData(Requests.requestCurrentWeatherByName(cityName));
+	}
+}

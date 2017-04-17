@@ -1,0 +1,9 @@
+package weather;
+
+import java.sql.Time;
+import java.util.ArrayList;
+
+public class Forecast {
+
+	private ArrayList<Weather, Time> forecast = new ArrayList<Weather, Time>();
+}

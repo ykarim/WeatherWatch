@@ -1,0 +1,11 @@
+package weather;
+
+public class Temperature {
+
+	enum Unit {
+		CELSIUS,
+		FAHRENHEIT;
+	}
+	private double hightTemp;
+	
+}

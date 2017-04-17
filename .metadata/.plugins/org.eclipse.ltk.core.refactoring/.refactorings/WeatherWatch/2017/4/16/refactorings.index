@@ -1,0 +1,27 @@
+1492372479300	Move compilation unit
+1492374521958	Rename compilation unit 'Request.java'
+1492376305662	Rename method 'requestCurrentWeather'
+1492383168640	Move folder
+1492383172177	Delete element
+1492383362091	Delete element
+1492383975369	Rename package 'network'
+1492383979323	Delete element
+1492383994551	Rename package 'notification'
+1492384002136	Rename package 'dao'
+1492384007522	Rename package 'view'
+1492384016019	Rename package 'service'
+1492384021344	Rename package 'weather'
+1492384029622	Rename package 'webapp'
+1492384098824	Rename package 'main.dao'
+1492384115365	Rename package 'main.network'
+1492384126872	Rename package 'main.notification'
+1492384133145	Rename package 'main.service'
+1492384142443	Rename package 'main.view'
+1492384148595	Rename package 'main.weather'
+1492384158919	Rename package 'main.webapp'
+1492384622576	Delete element
+1492385106433	Delete element
+1492385119017	Rename source folder 'test'
+1492385405449	Rename source folder 'src.test'
+1492386539274	Rename source folder 'test'
+1492391032717	Rename source folder 'src.test'

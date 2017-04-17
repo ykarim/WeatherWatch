@@ -1,0 +1,20 @@
+package java.main.network;
+
+public class WeatherAccess {
+	
+	public static void getCurrentWeatherDataByName(String cityName) {
+		NetworkConnect.getData(Requests.requestCurrentWeatherByName(cityName));
+	}
+	
+	public static void getCurrentWeatherDataByZip(String zipCode, String countryCode) {
+		NetworkConnect.getData(Requests.requestCurrentWeatherByZip(zipCode, countryCode));
+	}
+	
+	public static void getForecastByName(String cityName) {
+		NetworkConnect.getData(Requests.requestForecastByName(cityName));
+	}
+	
+	public static void getForecastByZip(String zipCode, String countryCode) {
+		
+	}
+}

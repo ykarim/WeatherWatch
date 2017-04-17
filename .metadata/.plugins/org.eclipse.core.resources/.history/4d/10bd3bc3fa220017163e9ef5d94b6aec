@@ -1,0 +1,44 @@
+package java.main.weather;
+
+public class Weather {
+
+	enum WeatherCondition {
+		SUNNY,
+		PARTLY_CLOUDY,
+		CLOUDY,
+		SHOWERS,
+		THUNDERSTORM,
+		SNOW,
+		WINDY,
+		NONE;
+	}
+	
+	private WeatherCondition condition;
+	private Temperature temperature;	
+	
+	public Weather() {
+		condition = WeatherCondition.NONE;
+		temperature = new Temperature(Temperature.Unit.CELSIUS, 0);
+	}
+	
+	public Weather(WeatherCondition condition, Temperature temperature) {
+		this.condition = condition;
+		this.temperature = temperature;
+	}
+
+	public WeatherCondition getCondition() {
+		return condition;
+	}
+
+	public void setCondition(WeatherCondition condition) {
+		this.condition = condition;
+	}
+
+	public Temperature getTemperature() {
+		return temperature;
+	}
+
+	public void setTemperature(Temperature temperature) {
+		this.temperature = temperature;
+	}
+}

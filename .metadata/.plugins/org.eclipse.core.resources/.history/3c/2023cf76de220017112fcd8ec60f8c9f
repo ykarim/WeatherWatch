@@ -1,0 +1,24 @@
+package weather;
+
+public class Weather {
+
+	enum WeatherCondition {
+		SUNNY,
+		PARTLY_CLOUDY,
+		CLOUDY,
+		SHOWERS,
+		THUNDERSTORM,
+		SNOW,
+		WINDY,
+		NONE;
+	}	
+	
+	private WeatherCondition condition;
+	private Temperature tempHigh;
+	private Temperature tempLow;
+	
+	
+	public Weather() {
+		condition = WeatherCondition.NONE;
+	}
+}

@@ -1,0 +1,33 @@
+package weather;
+
+public class Temperature {
+
+	enum Unit {
+		CELSIUS,
+		FAHRENHEIT;
+	}
+	
+	private Unit unit;
+	private double temperature;
+	
+	public Temperature(Unit unit, double temperature) {
+		this.unit = unit;
+		this.temperature = temperature;
+	}
+
+	public Unit getUnit() {
+		return unit;
+	}
+
+	public void setUnit(Unit unit) {
+		this.unit = unit;
+	}
+
+	public double getTemperature() {
+		return temperature;
+	}
+
+	public void setTemperature(double temperature) {
+		this.temperature = temperature;
+	}
+}

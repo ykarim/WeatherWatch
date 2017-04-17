@@ -1,0 +1,8 @@
+package main;
+
+public class Snippet {
+	java -cp yourwarfile.war com.yourcompany.YourMainClass
+	
+	
+}
+

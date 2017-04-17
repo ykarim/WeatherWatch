@@ -1,0 +1,12 @@
+package network;
+
+public class Request {
+
+	public void requestCurrentWeather() {
+		
+	}
+	
+	public void requestForecast() {
+		
+	}
+}

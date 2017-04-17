@@ -1,0 +1,8 @@
+package weather;
+
+public class Weather {
+
+	enum Conditions {
+		
+	}
+}

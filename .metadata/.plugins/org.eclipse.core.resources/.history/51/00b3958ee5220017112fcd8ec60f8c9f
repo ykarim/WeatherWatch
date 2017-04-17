@@ -1,0 +1,20 @@
+package network;
+
+import org.apache.http.client.methods.HttpGet;
+
+public class Requests {
+	
+	private final String API_KEY = "26b5c08cd8788979f3977188af39c4b0";
+	
+	public HttpGet requestCurrentWeather(String cityName) {
+		return new HttpGet("api.openweathermap.org/data/2.5/weather?" + "q=" + cityName + getAPIKey());
+	}
+	
+	public HttpGet requestForecast() {
+		
+	}
+	
+	private String getAPIKey() {
+		return ("&APPID=" + API_KEY);
+	}
+}
