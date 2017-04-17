@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/WeatherWatch/test/main/java/network/WeatherAccessTest.java"/>
+<listEntry value="/WeatherWatch/src/test/java/network/WeatherAccessTest.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="main.java.network.WeatherAccessTest"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="test.java.network.WeatherAccessTest"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="WeatherWatch"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>

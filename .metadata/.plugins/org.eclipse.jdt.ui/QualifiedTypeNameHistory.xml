@@ -7,4 +7,8 @@
 <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="main.java.network.WeatherAccess"/>
+<fullyQualifiedTypeName name="test.java.weather.TemperatureTest"/>
+<fullyQualifiedTypeName name="main.java.weather.Temperature"/>
+<fullyQualifiedTypeName name="main.java.weather.Temperature.Unit"/>
+<fullyQualifiedTypeName name="java.util.Optional"/>
 </qualifiedTypeNameHistroy>

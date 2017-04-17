@@ -1220,3 +1220,214 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognise
 2017-04-16 21:44:25,243 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
 2017-04-16 21:44:25,415 [Worker-50] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch
 2017-04-16 21:44:25,415 [Worker-50] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean install
+2017-04-16 22:10:22,222 [Worker-0] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2017-04-16 22:12:20,806 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:12:20,806 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:12:25,443 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:12:25,467 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:12:25,469 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:12:25,512 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:12:31,547 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:12:31,553 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:12:31,577 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:12:31,598 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:12:31,603 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:12:31,703 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:12:45,837 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:12:45,837 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:12:45,837 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:12:45,869 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:12:45,869 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:12:45,884 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:12:46,905 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:12:47,093 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:12:47,202 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:12:47,273 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:12:47,282 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:12:47,296 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:12:56,479 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: src.ykarim:WeatherWatch:1.0-SNAPSHOT @ C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\pom.xml.
+2017-04-16 22:13:00,087 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:13:00,087 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:13:00,103 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:13:00,212 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:13:00,212 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:13:00,384 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:13:51,159 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:13:51,159 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:13:51,237 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:13:51,316 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:13:51,753 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:13:51,800 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:14:47,791 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:14:47,791 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:14:47,884 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:14:47,994 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:14:48,041 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:14:48,072 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:17:33,600 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:17:33,601 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:17:33,603 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:17:33,655 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:17:33,718 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:17:33,807 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:17:34,880 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:17:34,880 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:17:34,931 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:17:34,947 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:17:34,982 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:17:35,072 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:18:39,715 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:18:39,715 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:18:39,718 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:18:39,768 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:18:39,827 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:18:39,859 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:19:05,883 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:19:05,883 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:19:05,904 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:19:05,958 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:19:05,983 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:19:06,028 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:19:22,128 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:19:22,128 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:19:22,143 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:19:22,175 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:19:22,221 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:19:22,221 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:19:44,493 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:19:44,493 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\test added.
+2017-04-16 22:19:44,508 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:19:44,571 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:19:44,602 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:19:44,649 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:20:50,042 [Worker-5] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch
+2017-04-16 22:20:50,042 [Worker-5] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean install
+2017-04-16 22:21:19,962 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: src.ykarim:WeatherWatch:1.0-SNAPSHOT @ C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\pom.xml.
+2017-04-16 22:21:23,053 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:21:23,053 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:21:23,068 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:21:23,068 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:21:23,084 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:21:23,209 [Worker-6] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch
+2017-04-16 22:21:23,209 [Worker-6] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean install
+2017-04-16 22:25:57,771 [Worker-7] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: src.ykarim:WeatherWatch:1.0-SNAPSHOT @ C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\pom.xml.
+2017-04-16 22:25:59,958 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:26:00,036 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:26:00,052 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:26:00,067 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:26:00,067 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:26:00,583 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2017-04-16 22:26:00,848 [Worker-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch
+2017-04-16 22:26:00,848 [Worker-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean install
+2017-04-16 22:28:26,080 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:28:26,095 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:28:26,111 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:28:26,111 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:28:26,127 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-16 22:28:27,313 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-16 22:28:27,313 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:28:27,422 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-16 22:28:27,453 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-16 22:28:27,485 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-17 00:55:55,607 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-17 00:55:55,785 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 00:55:55,823 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-17 00:55:55,845 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 00:55:55,869 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-17 00:57:18,662 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-17 00:57:18,668 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 00:57:18,992 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-17 00:57:19,050 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 00:57:19,156 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-17 01:07:24,003 [Worker-0] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2017-04-17 01:07:26,939 [Worker-0] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2: C:\Users\yusuf\.m2\repository\.cache\m2e\1.5.2\26522e0d83a422eed93329ece7565cfc\min\_4a.cfs (The system cannot find the file specified)
+java.io.FileNotFoundException: C:\Users\yusuf\.m2\repository\.cache\m2e\1.5.2\26522e0d83a422eed93329ece7565cfc\min\_4a.cfs (The system cannot find the file specified)
+	at java.io.RandomAccessFile.open(Native Method) ~[na:1.8.0_25]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_25]
+	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.CompoundFileReader.<init>(CompoundFileReader.java:70) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:321) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160) ~[org.eclipse.m2e.maven.indexer_1.5.2.20150413-2214/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1136) [org.eclipse.m2e.core_1.5.2.20150413-2215.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1084) [org.eclipse.m2e.core_1.5.2.20150413-2215.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:656) [org.eclipse.m2e.core_1.5.2.20150413-2215.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:72) [org.eclipse.m2e.core_1.5.2.20150413-2215.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2017-04-17 01:32:28,371 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-17 01:32:38,866 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:32:39,007 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-17 01:32:39,007 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:32:39,085 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-17 01:34:35,492 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-17 01:34:35,496 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:34:35,509 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-17 01:34:35,513 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:34:35,519 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-17 01:37:22,373 [Worker-1] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2017-04-17 01:37:25,725 [Worker-1] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2: C:\Users\yusuf\.m2\repository\.cache\m2e\1.5.2\26522e0d83a422eed93329ece7565cfc\min\_4a.cfs (The system cannot find the file specified)
+java.io.FileNotFoundException: C:\Users\yusuf\.m2\repository\.cache\m2e\1.5.2\26522e0d83a422eed93329ece7565cfc\min\_4a.cfs (The system cannot find the file specified)
+	at java.io.RandomAccessFile.open(Native Method) ~[na:1.8.0_25]
+	at java.io.RandomAccessFile.<init>(Unknown Source) ~[na:1.8.0_25]
+	at org.apache.lucene.store.FSDirectory$FSIndexInput$Descriptor.<init>(FSDirectory.java:552) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:582) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.FSDirectory.openInput(FSDirectory.java:488) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.CompoundFileReader.<init>(CompoundFileReader.java:70) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:321) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160) ~[org.eclipse.m2e.maven.indexer_1.5.2.20150413-2214/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1136) [org.eclipse.m2e.core_1.5.2.20150413-2215.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1084) [org.eclipse.m2e.core_1.5.2.20150413-2215.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:656) [org.eclipse.m2e.core_1.5.2.20150413-2215.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:72) [org.eclipse.m2e.core_1.5.2.20150413-2215.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2017-04-17 01:41:57,697 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-17 01:42:00,863 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:42:01,035 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-17 01:42:01,035 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:42:01,066 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-17 01:43:30,142 [Worker-9] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch
+2017-04-17 01:43:30,142 [Worker-9] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean install
+2017-04-17 01:45:28,946 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-17 01:45:28,962 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:45:29,181 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-17 01:45:29,196 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:45:29,493 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-17 01:46:54,183 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-17 01:46:54,183 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:46:54,448 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-17 01:46:54,448 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:46:54,495 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-17 01:51:56,708 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src added.
+2017-04-17 01:51:56,802 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:51:56,817 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\main\resources
+2017-04-17 01:51:56,833 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-04-17 01:51:56,833 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch\src\test\resources
+2017-04-17 01:52:03,402 [Worker-11] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\yusuf\Desktop\EclipseNormalProject\WeatherWatch\WeatherWatch
+2017-04-17 01:52:03,402 [Worker-11] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean install

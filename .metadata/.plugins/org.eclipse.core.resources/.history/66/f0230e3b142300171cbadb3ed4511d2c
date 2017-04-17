@@ -1,0 +1,15 @@
+package test.java.weather;
+
+import main.java.weather.Temperature;
+
+import org.junit.Test;
+
+public class TemperatureTest {
+
+	private final double tempValue = 0.0;
+	@Test
+	public void getUnit_shouldReturnUnit() {
+		Temperature temp = new Temperature(Temperature.Unit.FAHRENHEIT, tempValue);
+		assertEquals
+	}
+}

@@ -22,14 +22,12 @@ public class NetworkConnect {
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					(conn.getInputStream())));
 
-				String output;
-				System.out.println("Output from Server .... \n");
-				while ((output = br.readLine()) != null) {
-					System.out.println(output);
+			String output;
+			while ((output = br.readLine()) != null) {
+				System.out.println(output);
 			}
 			conn.disconnect();
 	    } catch (IOException e) {
-	    	// thrown by entity.getContent();
 	    	e.printStackTrace();
 	    }
 	}

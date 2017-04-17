@@ -2,7 +2,7 @@ package main.java.weather;
 
 public class Temperature {
 
-	enum Unit {
+	public enum Unit {
 		CELSIUS,
 		FAHRENHEIT;
 	}
@@ -20,7 +20,9 @@ public class Temperature {
 	}
 
 	public void setUnit(Unit unit) {
-		this.unit = unit;
+		if (this.unit != null && unit != null) {
+			this.unit = unit;
+		}
 	}
 
 	public double getTemperature() {
@@ -32,7 +34,7 @@ public class Temperature {
 	}
 	
 	public void convertTemp(Unit desiredUnit) {
-		if (desiredUnit != unit) {
+		if (desiredUnit != null && desiredUnit != unit) {
 			if (desiredUnit == Unit.FAHRENHEIT) { 
 				//Current unit must be CELSIUS
 				temperature = temperature * 1.8 + 32;
