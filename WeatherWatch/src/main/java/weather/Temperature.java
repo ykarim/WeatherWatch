@@ -1,4 +1,4 @@
-package main.java.weather;
+package weather;
 
 public class Temperature {
 
@@ -8,7 +8,7 @@ public class Temperature {
 	}
 	
 	private Unit unit;
-	private double temperature;
+	public double temperature;
 	
 	public Temperature(Unit unit, double temperature) {
 		this.unit = unit;
@@ -21,27 +21,29 @@ public class Temperature {
 
 	public void setUnit(Unit unit) {
 		if (this.unit != null && unit != null) {
-			this.unit = unit;
-		}
+            this.temperature = convertTemp(temperature, unit);
+            this.unit = unit;
+        }
 	}
 
-	public double getTemperature() {
-		return temperature;
+	public double getTemperature(Unit desiredUnit) {
+		return convertTemp(temperature, desiredUnit);
 	}
 
 	public void setTemperature(double temperature) {
 		this.temperature = temperature;
 	}
 	
-	public void convertTemp(Unit desiredUnit) {
+	private double convertTemp(double tempVal, Unit desiredUnit) {
 		if (desiredUnit != null && desiredUnit != unit) {
 			if (desiredUnit == Unit.FAHRENHEIT) { 
 				//Current unit must be CELSIUS
-				temperature = temperature * 1.8 + 32;
+				tempVal = tempVal * 1.8 + 32;
 			} else if (desiredUnit == Unit.CELSIUS) {
 				//Current unit must be FAHRENHEIT
-				temperature = (temperature - 32) * (5/9); 
+				tempVal = (tempVal - 32) * 5/9;
 			}
 		}
+		return tempVal;
 	}
 }

@@ -1,6 +1,4 @@
-package test.java.network;
-
-import main.java.network.WeatherAccess;
+package network;
 
 public class WeatherAccessTest {
 

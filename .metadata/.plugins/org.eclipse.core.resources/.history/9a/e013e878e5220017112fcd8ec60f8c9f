@@ -1,9 +1,0 @@
-package network;
-
-
-public class WeatherAccess {
-
-	public void getCurrentWeatherData() {
-		
-	}
-}

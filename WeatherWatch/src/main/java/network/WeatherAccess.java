@@ -1,4 +1,4 @@
-package main.java.network;
+package network;
 
 public class WeatherAccess {
 	

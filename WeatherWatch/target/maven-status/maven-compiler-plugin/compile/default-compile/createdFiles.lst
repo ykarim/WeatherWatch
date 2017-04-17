@@ -1,0 +1,12 @@
+network\Requests.class
+weather\Forecast.class
+weather\Weather$WeatherCondition.class
+weather\Weather.class
+main\java\dao\WeatherDAO.class
+network\WeatherAccessTest.class
+weather\Temperature.class
+weather\TemperatureTest.class
+network\DataFormat.class
+network\WeatherAccess.class
+network\NetworkConnect.class
+weather\Temperature$Unit.class
