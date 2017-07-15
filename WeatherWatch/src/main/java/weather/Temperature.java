@@ -2,20 +2,15 @@ package weather;
 
 public class Temperature {
 
-	public enum Unit {
-		CELSIUS,
-		FAHRENHEIT;
-	}
-	
-	private Unit unit;
 	public double temperature;
-	
-	public Temperature(Unit unit, double temperature) {
+    private Unit unit;
+
+    public Temperature(Unit unit, double temperature) {
 		this.unit = unit;
 		this.temperature = temperature;
 	}
 
-	public Unit getUnit() {
+    public Unit getUnit() {
 		return unit;
 	}
 
@@ -33,17 +28,29 @@ public class Temperature {
 	public void setTemperature(double temperature) {
 		this.temperature = temperature;
 	}
-	
+
 	private double convertTemp(double tempVal, Unit desiredUnit) {
 		if (desiredUnit != null && desiredUnit != unit) {
-			if (desiredUnit == Unit.FAHRENHEIT) { 
-				//Current unit must be CELSIUS
-				tempVal = tempVal * 1.8 + 32;
-			} else if (desiredUnit == Unit.CELSIUS) {
-				//Current unit must be FAHRENHEIT
-				tempVal = (tempVal - 32) * 5/9;
-			}
+            if (unit == Unit.CELSIUS && desiredUnit == Unit.FAHRENHEIT) {
+                tempVal = tempVal * 1.8 + 32;
+            } else if (unit == Unit.FAHRENHEIT && desiredUnit == Unit.CELSIUS) {
+                tempVal = (tempVal - 32) * 5/9;
+            } else if (unit == Unit.FAHRENHEIT && desiredUnit == Unit.KELVIN) {
+                tempVal = ((tempVal - 32) / 1.8) + 273.15;
+            } else if (unit == Unit.KELVIN && desiredUnit == Unit.FAHRENHEIT) {
+                tempVal = 1.8 * (tempVal - 273.15) + 32;
+            } else if (unit == Unit.CELSIUS && desiredUnit == Unit.KELVIN) {
+                tempVal = tempVal + 273.15;
+            } else if (unit == Unit.KELVIN && desiredUnit == Unit.CELSIUS) {
+                tempVal = tempVal - 273.15;
+            }
 		}
 		return tempVal;
 	}
+
+    public enum Unit {
+        CELSIUS,
+        FAHRENHEIT,
+        KELVIN
+    }
 }
