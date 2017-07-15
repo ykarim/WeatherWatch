@@ -1,37 +1,29 @@
 package weather;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Weather {
 
-	enum WeatherCondition {
-		SUNNY,
-		PARTLY_CLOUDY,
-		CLOUDY,
-		SHOWERS,
-		THUNDERSTORM,
-		SNOW,
-		WINDY,
-		NONE;
+    private List<WeatherCondition> condition;
+    private Temperature temperature;
+
+    public Weather() {
+        condition = new ArrayList<>();
+        temperature = new Temperature(Temperature.Unit.CELSIUS, 0);
 	}
-	
-	private WeatherCondition condition;
-	private Temperature temperature;	
-	
-	public Weather() {
-		condition = WeatherCondition.NONE;
-		temperature = new Temperature(Temperature.Unit.CELSIUS, 0);
-	}
-	
-	public Weather(WeatherCondition condition, Temperature temperature) {
-		this.condition = condition;
+
+    public Weather(List<WeatherCondition> condition, Temperature temperature) {
+        this.condition = condition;
 		this.temperature = temperature;
 	}
 
-	public WeatherCondition getCondition() {
-		return condition;
+    public List<WeatherCondition> getCondition() {
+        return condition;
 	}
 
-	public void setCondition(WeatherCondition condition) {
-		this.condition = condition;
+    public void setCondition(List<WeatherCondition> condition) {
+        this.condition = condition;
 	}
 
 	public Temperature getTemperature() {
@@ -41,4 +33,14 @@ public class Weather {
 	public void setTemperature(Temperature temperature) {
 		this.temperature = temperature;
 	}
+
+    public enum WeatherCondition {
+        THUNDERSTORM,
+        DRIZZLE,
+        RAIN,
+        SNOW,
+        ATMOSPHERE,
+        CLEAR,
+        OTHER
+    }
 }

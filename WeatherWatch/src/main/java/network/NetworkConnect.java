@@ -8,27 +8,30 @@ import java.net.URL;
 
 public class NetworkConnect {
 
-
-	public static void getData(URL url) {
-		try {
+    public static String getData(URL url) {
+        try {
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");
-			
+
 			if(conn.getResponseCode() != 200) {
 				throw new RuntimeException("ERROR");
 			}
-			
+
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					(conn.getInputStream())));
 
 			String output;
-			while ((output = br.readLine()) != null) {
-				System.out.println(output);
-			}
-			conn.disconnect();
-	    } catch (IOException e) {
+            StringBuilder stringBuilder = new StringBuilder();
+            while ((output = br.readLine()) != null) {
+                stringBuilder.append(output);
+            }
+            output = stringBuilder.toString();
+            conn.disconnect();
+            return output;
+        } catch (IOException e) {
 	    	e.printStackTrace();
 	    }
-	}
+        return null;
+    }
 }

@@ -1,20 +1,31 @@
 package network;
 
+import dao.WeatherDAO;
+import weather.Weather;
+
 public class WeatherAccess {
-	
-	public static void getCurrentWeatherDataByName(String cityName) {
-		NetworkConnect.getData(Requests.requestCurrentWeatherByName(cityName));
-	}
-	
-	public static void getCurrentWeatherDataByZip(String zipCode, String countryCode) {
-		NetworkConnect.getData(Requests.requestCurrentWeatherByZip(zipCode, countryCode));
-	}
-	
-	public static void getForecastByName(String cityName) {
-		NetworkConnect.getData(Requests.requestForecastByName(cityName));
-	}
-	
-	public static void getForecastByZip(String zipCode, String countryCode) {
-		
-	}
+
+    private WeatherDAO weatherDAO;
+
+    public WeatherAccess(WeatherDAO weatherDAO) {
+        this.weatherDAO = weatherDAO;
+    }
+
+    public static Weather getCurrentWeatherDataByName(String cityName) {
+        return DataFormat.convertJSONToWeatherObj(
+                NetworkConnect.getData(Requests.requestCurrentWeatherByName(cityName)));
+    }
+
+    public static Weather getCurrentWeatherDataByZip(String zipCode, String countryCode) {
+        return DataFormat.convertJSONToWeatherObj(
+                NetworkConnect.getData(Requests.requestCurrentWeatherByZip(zipCode, countryCode)));
+    }
+
+    public static String getForecastByName(String cityName) {
+        return NetworkConnect.getData(Requests.requestForecastByName(cityName));
+    }
+
+    public static String getForecastByZip(String zipCode, String countryCode) {
+        return null;
+    }
 }
