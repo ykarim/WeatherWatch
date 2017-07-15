@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e792371-3364-4c8a-853e-3a7348ed5508" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/network/WeatherCodes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/network/DataFormat.java" afterPath="$PROJECT_DIR$/src/main/java/network/DataFormat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/network/NetworkConnect.java" afterPath="$PROJECT_DIR$/src/main/java/network/NetworkConnect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/network/WeatherAccess.java" afterPath="$PROJECT_DIR$/src/main/java/network/WeatherAccess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/weather/Weather.java" afterPath="$PROJECT_DIR$/src/main/java/weather/Weather.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-weather.TemperatureTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-weather.TemperatureTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/weather.TemperatureTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/weather.TemperatureTest.txt" />
     </list>
@@ -23,11 +18,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WeatherDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="135" column="40" lean-forward="false" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeatherDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#631#632#0" expanded="true" />
@@ -63,7 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/weather/Temperature.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/ConditionCodes.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/WeatherCodes.java" />
@@ -74,6 +78,7 @@
         <option value="$PROJECT_DIR$/src/main/java/network/DataFormat.java" />
         <option value="$PROJECT_DIR$/src/test/java/network/WeatherAccessTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -560,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500085172569</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Weather object created for every call for weather data">
+      <created>1500092033219</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1500092033219</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -635,7 +647,8 @@
     <MESSAGE value="Updated pom.xml to create jar instead of war" />
     <MESSAGE value="Added Spring" />
     <MESSAGE value="KELVIN unit" />
-    <option name="LAST_COMMIT_MESSAGE" value="KELVIN unit" />
+    <MESSAGE value="Weather object created for every call for weather data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Weather object created for every call for weather data" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -653,14 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -724,7 +729,7 @@
         <state relative-caret-position="237">
           <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -776,12 +781,20 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#631#632#0" expanded="true" />
             <element signature="e#693#694#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="135" column="40" lean-forward="false" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
