@@ -3,7 +3,7 @@ os: Windows Server 2012
 install:
   - ps: |
       Add-Type -AssemblyName System.IO.Compression.FileSystem
-      if ((Test-Path -Path "C:\maven" )) {
+      if (!(Test-Path -Path "C:\maven" )) {
         (new-object System.Net.WebClient).DownloadFile(
           'http://apache.mirrors.tds.net/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.zip',
           'C:\maven-bin.zip'
