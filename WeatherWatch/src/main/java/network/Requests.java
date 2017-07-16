@@ -40,4 +40,15 @@ public class Requests {
 		}
 		return url;
 	}
+
+    public static URL requestForecastByZip(String zipCode, String countryCode) {
+        URL url = null;
+        try {
+            url = new URL(URL + "forecast?" + "zip=" + zipCode + "," + countryCode + API_KEY);
+        } catch (MalformedURLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return url;
+    }
 }

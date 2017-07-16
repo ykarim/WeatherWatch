@@ -30,6 +30,6 @@ public class WeatherAccess {
     }
 
     public static String getForecastByZip(String zipCode, String countryCode) {
-        return null;
+        return NetworkConnect.getData(Requests.requestForecastByZip(zipCode, countryCode));
     }
 }

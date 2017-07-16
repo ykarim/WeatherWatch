@@ -6,6 +6,7 @@ public class WeatherAccessTest {
 		WeatherAccess.getCurrentWeatherDataByName("Paterson");
 		WeatherAccess.getCurrentWeatherDataByZip("07501", "us");
 		WeatherAccess.getForecastByName("Paterson");
+		WeatherAccess.getForecastByZip("07501", "us");
 	}
 	
 }
