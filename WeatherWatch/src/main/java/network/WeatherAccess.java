@@ -1,7 +1,10 @@
 package network;
 
 import dao.WeatherDAO;
+import weather.Forecast;
 import weather.Weather;
+
+import java.util.List;
 
 public class WeatherAccess {
 
@@ -21,8 +24,9 @@ public class WeatherAccess {
                 NetworkConnect.getData(Requests.requestCurrentWeatherByZip(zipCode, countryCode)));
     }
 
-    public static String getForecastByName(String cityName) {
-        return NetworkConnect.getData(Requests.requestForecastByName(cityName));
+    public static List<Forecast> getForecastByName(String cityName) {
+        return DataFormat.convertJSONToForecastObjs(
+                NetworkConnect.getData(Requests.requestForecastByName(cityName)));
     }
 
     public static String getForecastByZip(String zipCode, String countryCode) {
