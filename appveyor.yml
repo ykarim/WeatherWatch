@@ -21,7 +21,6 @@ build_script:
   - cd WeatherWatch
   - mvn clean package --batch-mode -DskipTest
 test_script:
-  - cd WeatherWatch
   - mvn clean install --batch-mode
 cache:
   - C:\maven\
