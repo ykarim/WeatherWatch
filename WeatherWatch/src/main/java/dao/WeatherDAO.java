@@ -13,11 +13,15 @@ public class WeatherDAO {
         return weatherData;
     }
 
-    public void addWeatherData(String cityName) {
+    public void addWeatherData(Weather weather) {
+        weatherData.add(weather);
+    }
+
+    public void getWeatherData(String cityName) {
         weatherData.add(WeatherAccess.getCurrentWeatherDataByName(cityName));
     }
 
-    public void addWeatherData(String zipCode, String countryCode) {
+    public void getWeatherData(String zipCode, String countryCode) {
         weatherData.add(WeatherAccess.getCurrentWeatherDataByZip(zipCode, countryCode));
     }
 
