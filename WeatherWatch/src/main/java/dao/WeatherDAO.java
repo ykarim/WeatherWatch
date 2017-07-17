@@ -1,6 +1,5 @@
 package dao;
 
-import network.WeatherAccess;
 import weather.Weather;
 
 import java.util.ArrayList;
@@ -18,11 +17,11 @@ public class WeatherDAO {
     }
 
     public void getWeatherData(String cityName) {
-        weatherData.add(WeatherAccess.getCurrentWeatherDataByName(cityName));
+        weatherData.add(WeatherDataAccess.getCurrentWeatherDataByName(cityName));
     }
 
     public void getWeatherData(String zipCode, String countryCode) {
-        weatherData.add(WeatherAccess.getCurrentWeatherDataByZip(zipCode, countryCode));
+        weatherData.add(WeatherDataAccess.getCurrentWeatherDataByZip(zipCode, countryCode));
     }
 
     public Weather getLastUpdatedWeather() {

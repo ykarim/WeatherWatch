@@ -1,19 +1,22 @@
 package queue;
 
 import dao.ForecastDAO;
-import network.DataFormat;
-import network.NetworkConnect;
 
-import java.net.URL;
 import java.util.TimerTask;
 
 public class ForecastTask extends TimerTask implements UpdateTask {
 
-    private URL forecastURL;
+    private String cityName, zipCode, countryCode;
     private ForecastDAO forecastDAO;
 
-    public ForecastTask(URL forecastURL) {
-        this.forecastURL = forecastURL;
+    public ForecastTask(String cityName) {
+        this.cityName = cityName;
+        forecastDAO = new ForecastDAO();
+    }
+
+    public ForecastTask(String zipCode, String countryCode) {
+        this.zipCode = zipCode;
+        this.countryCode = countryCode;
         forecastDAO = new ForecastDAO();
     }
 
@@ -23,14 +26,22 @@ public class ForecastTask extends TimerTask implements UpdateTask {
     }
 
     @Override
-    public void setRequest(URL url) {
-        forecastURL = url;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    @Override
+    public void setZipCode(String zipCode, String countryCode) {
+        this.zipCode = zipCode;
+        this.countryCode = countryCode;
     }
 
     @Override
     public void refreshData() {
-        if (forecastURL != null) {
-            forecastDAO.addForecasts(DataFormat.convertJSONToForecastObjs(NetworkConnect.getData(forecastURL)));
+        if (cityName != null) {
+            forecastDAO.getForecast(cityName);
+        } else if (zipCode != null && countryCode != null) {
+            forecastDAO.getForecast(zipCode, countryCode);
         }
     }
 }

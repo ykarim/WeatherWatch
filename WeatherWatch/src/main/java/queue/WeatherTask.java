@@ -1,19 +1,22 @@
 package queue;
 
 import dao.WeatherDAO;
-import network.DataFormat;
-import network.NetworkConnect;
 
-import java.net.URL;
 import java.util.TimerTask;
 
 public class WeatherTask extends TimerTask implements UpdateTask {
 
-    private URL weatherURL;
+    private String cityName, zipCode, countryCode;
     private WeatherDAO weatherDAO;
 
-    public WeatherTask(URL weatherURL) {
-        this.weatherURL = weatherURL;
+    public WeatherTask(String cityName) {
+        this.cityName = cityName;
+        weatherDAO = new WeatherDAO();
+    }
+
+    public WeatherTask(String zipCode, String countryCode) {
+        this.zipCode = zipCode;
+        this.countryCode = countryCode;
         weatherDAO = new WeatherDAO();
     }
 
@@ -22,15 +25,22 @@ public class WeatherTask extends TimerTask implements UpdateTask {
         refreshData();
     }
 
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
     @Override
-    public void setRequest(URL url) {
-        weatherURL = url;
+    public void setZipCode(String zipCode, String countryCode) {
+        this.zipCode = zipCode;
+        this.countryCode = countryCode;
     }
 
     @Override
     public void refreshData() {
-        if (weatherURL != null) {
-            weatherDAO.addWeatherData(DataFormat.convertJSONToWeatherObj(NetworkConnect.getData(weatherURL)));
+        if (cityName != null) {
+            weatherDAO.getWeatherData(cityName);
+        } else if (zipCode != null && countryCode != null) {
+            weatherDAO.getWeatherData(zipCode, countryCode);
         }
     }
 }
