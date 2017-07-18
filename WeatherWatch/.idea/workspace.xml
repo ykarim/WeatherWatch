@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e792371-3364-4c8a-853e-3a7348ed5508" name="Default" comment="Cleaner updating by sending cityname or zipcode as parameters instead of URL">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/dao/WeatherDataAccess.java" afterPath="$PROJECT_DIR$/src/main/java/network/WeatherDataAccess.java" />
+    <list default="true" id="4e792371-3364-4c8a-853e-3a7348ed5508" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/ForecastDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/ForecastDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/queue/ForecastTask.java" afterPath="$PROJECT_DIR$/src/main/java/queue/ForecastTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/queue/WeatherTask.java" afterPath="$PROJECT_DIR$/src/main/java/queue/WeatherTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-weather.TemperatureTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-weather.TemperatureTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/weather.TemperatureTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/weather.TemperatureTest.txt" />
     </list>
@@ -22,27 +18,29 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WeatherDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WeatherDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="272">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#385#386#0" expanded="true" />
+                <element signature="e#420#421#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForecastDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ForecastDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/ForecastDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#549#550#0" expanded="true" />
-                <element signature="e#582#583#0" expanded="true" />
+                <element signature="e#515#516#0" expanded="true" />
+                <element signature="e#548#549#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,11 +95,11 @@
         <option value="$PROJECT_DIR$/src/main/java/queue/UpdateTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/WeatherAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/WeatherDataAccess.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/network/WeatherDataAccess.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/ForecastDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/queue/ForecastTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/queue/WeatherTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/ForecastDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java" />
       </list>
     </option>
   </component>
@@ -220,6 +218,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -916,7 +918,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500264016455</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="WeatherDataAccess adds data directly instead of using getter from DAO">
+      <created>1500342405344</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1500342405344</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1051,7 +1060,8 @@
     <MESSAGE value="Get forecast with zip code" />
     <MESSAGE value="Update weather using TimerTasks" />
     <MESSAGE value="Cleaner updating by sending cityname or zipcode as parameters instead of URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaner updating by sending cityname or zipcode as parameters instead of URL" />
+    <MESSAGE value="WeatherDataAccess adds data directly instead of using getter from DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="WeatherDataAccess adds data directly instead of using getter from DAO" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1143,16 +1153,6 @@
         <state relative-caret-position="7752">
           <caret line="543" column="6" lean-forward="false" selection-start-line="543" selection-start-column="6" selection-end-line="543" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dao/ForecastDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="56" lean-forward="true" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1254,24 +1254,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/queue/WeatherTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1281,9 +1271,9 @@
         <state relative-caret-position="152">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1296,14 +1286,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/dao/ForecastDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-239">
+          <caret line="25" column="56" lean-forward="true" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/ForecastDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/WeatherDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
           </folding>
         </state>
       </provider>

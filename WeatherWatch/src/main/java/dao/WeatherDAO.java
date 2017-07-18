@@ -16,7 +16,11 @@ public class WeatherDAO {
         weatherData.add(weather);
     }
 
-    public Weather getLastUpdatedWeather() {
+    public void removeWeatherData() {
+        weatherData.clear();
+    }
+
+    public Weather getLatestWeather() {
         return weatherData.get(weatherData.size() - 1);
     }
 }
