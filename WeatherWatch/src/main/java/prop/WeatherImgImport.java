@@ -18,6 +18,7 @@ import java.util.HashMap;
 
 public class WeatherImgImport {
 
+    private static final String ignoreDTDTag = "http://apache.org/xml/features/nonvalidating/load-external-dtd";
     private static HashMap<Integer, Image> weatherBackgrounds = new HashMap<>();
     private static String backgroundImageXmlName = "imageLocations.xml";
     private static WeatherCodes weatherCodes = new WeatherCodes();
@@ -30,8 +31,7 @@ public class WeatherImgImport {
             Document dom;
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             try {
-                dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd",
-                        false);
+                dbf.setFeature(ignoreDTDTag, false);
                 DocumentBuilder db = dbf.newDocumentBuilder();
                 dom = db.parse(fileLoader.load(backgroundImageXmlName));
 
