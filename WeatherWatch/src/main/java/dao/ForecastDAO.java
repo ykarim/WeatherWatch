@@ -25,14 +25,6 @@ public class ForecastDAO {
         forecasts.clear();
     }
 
-    public void getForecast(String cityName) {
-        addForecasts(WeatherDataAccess.getForecastByName(cityName));
-    }
-
-    public void getForecast(String zipCode, String countryCode) {
-        addForecasts(WeatherDataAccess.getForecastByZip(zipCode, countryCode));
-    }
-
     public Forecast getLatestForecast() {
         return (ForecastDAO.getForecasts().get(forecasts.size() - 1));
     }

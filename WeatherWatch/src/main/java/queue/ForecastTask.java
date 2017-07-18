@@ -1,23 +1,20 @@
 package queue;
 
-import dao.ForecastDAO;
+import network.WeatherDataAccess;
 
 import java.util.TimerTask;
 
 public class ForecastTask extends TimerTask implements UpdateTask {
 
     private String cityName, zipCode, countryCode;
-    private ForecastDAO forecastDAO;
 
     public ForecastTask(String cityName) {
         this.cityName = cityName;
-        forecastDAO = new ForecastDAO();
     }
 
     public ForecastTask(String zipCode, String countryCode) {
         this.zipCode = zipCode;
         this.countryCode = countryCode;
-        forecastDAO = new ForecastDAO();
     }
 
     @Override
@@ -39,9 +36,9 @@ public class ForecastTask extends TimerTask implements UpdateTask {
     @Override
     public void refreshData() {
         if (cityName != null) {
-            forecastDAO.getForecast(cityName);
+            WeatherDataAccess.getForecastByName(cityName);
         } else if (zipCode != null && countryCode != null) {
-            forecastDAO.getForecast(zipCode, countryCode);
+            WeatherDataAccess.getForecastByZip(zipCode, countryCode);
         }
     }
 }
