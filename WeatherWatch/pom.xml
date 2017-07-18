@@ -109,7 +109,7 @@
 						<archive>
 							<manifest>
 								<addClasspath>true</addClasspath>
-								<mainClass>view.Application</mainClass>
+                                <mainClass>weatherwatch.WeatherWatch</mainClass>
 							</manifest>
 						</archive>
 						<descriptorRefs>

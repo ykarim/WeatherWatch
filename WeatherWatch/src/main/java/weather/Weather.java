@@ -41,6 +41,6 @@ public class Weather {
         SNOW,
         ATMOSPHERE,
         CLEAR,
-        OTHER
+        EXTREME
     }
 }
