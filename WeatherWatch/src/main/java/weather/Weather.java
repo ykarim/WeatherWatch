@@ -35,12 +35,22 @@ public class Weather {
 	}
 
     public enum WeatherCondition {
-        THUNDERSTORM,
-        DRIZZLE,
-        RAIN,
-        SNOW,
-        ATMOSPHERE,
-        CLEAR,
-        EXTREME
+        THUNDERSTORM("thunderstorm"),
+        DRIZZLE("drizzle"),
+        RAIN("rain"),
+        SNOW("snow"),
+        ATMOSPHERE("atmosphere"),
+        CLEAR("clear"),
+        EXTREME("extreme");
+
+        private String name;
+
+        WeatherCondition(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 }
