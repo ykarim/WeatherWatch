@@ -49,8 +49,18 @@ public class Temperature {
 	}
 
     public enum Unit {
-        CELSIUS,
-        FAHRENHEIT,
-        KELVIN
+        CELSIUS("CELSIUS"),
+        FAHRENHEIT("FAHRENHEIT"),
+        KELVIN("KELVIN");
+
+        private String unitName;
+
+        Unit(String unitName) {
+            this.unitName = unitName;
+        }
+
+        public String getUnitName() {
+            return unitName;
+        }
     }
 }

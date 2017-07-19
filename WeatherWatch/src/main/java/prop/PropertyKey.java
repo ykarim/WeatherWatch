@@ -1,0 +1,25 @@
+package prop;
+
+
+public enum PropertyKey {
+
+    FIRST_RUN("FIRST_RUN"),
+    PREFER_CITY_NAME_OVER_ZIP("PREFER_CITY_NAME_OVER_ZIP"),
+    PREFERRED_CITY_NAME("PREFERRED_CITY_NAME"),
+    PREFERRED_ZIP("PREFERRED_ZIP"),
+    PREFERRED_COUNTRY_CODE("PREFERRED_COUNTRY_CODE"),
+    PREFERRED_UNIT("PREFERRED_UNIT"),
+    CUSTOM_BKG_IMAGE_FOLDER("CUSTOM_BKG_IMAGE_FOLDER"),
+    CUSTOM_ICON_IMAGE_FOLDER("CUSTOM_ICON_IMAGE_FOLDER"),
+    CUSTOM_WEATHER_CODE_DEFINITIONS("CUSTOM_WEATHER_CODE_DEFINITIONS");
+
+    private String key;
+
+    PropertyKey(String key) {
+        this.key = key;
+    }
+
+    public String getKey() {
+        return key;
+    }
+}
