@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_131\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher verify"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -65,7 +65,7 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase name="setUnit_shouldSetUnitAndConvertTemp" classname="weather.TemperatureTest" time="0"/>
+  <testcase name="getUnit_shouldReturnUnit" classname="weather.TemperatureTest" time="0"/>
   <testcase name="getTemperature_shouldGetTemp" classname="weather.TemperatureTest" time="0"/>
   <testcase name="setTemperature_shouldSetTemp" classname="weather.TemperatureTest" time="0"/>
-  <testcase name="getUnit_shouldReturnUnit" classname="weather.TemperatureTest" time="0"/>
 </testsuite>
