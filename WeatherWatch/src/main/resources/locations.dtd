@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
         <!ELEMENT imageLocations (thunderstorm, drizzle, rain, snow, atmosphere, clear, extreme)>
+        <!ELEMENT iconLocations (thunderstorm, drizzle, rain, snow, atmosphere, clear, extreme)>
+
         <!ELEMENT thunderstorm (#PCDATA)>
         <!ELEMENT drizzle (#PCDATA)>
         <!ELEMENT rain (#PCDATA)>

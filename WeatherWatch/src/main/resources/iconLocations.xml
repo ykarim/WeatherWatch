@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE imageLocations SYSTEM "locations.dtd">
-<imageLocations>
+<!DOCTYPE iconLocations SYSTEM "locations.dtd">
+<iconLocations>
     <thunderstorm>weatherBackgrounds/lightning.jpeg</thunderstorm>
     <drizzle>weatherBackgrounds/drizzle.jpg</drizzle>
     <rain>weatherBackgrounds/rain.jpeg</rain>
@@ -8,4 +8,4 @@
     <atmosphere>weatherBackgrounds/fog.jpg</atmosphere>
     <clear>weatherBackgrounds/clear.jpeg</clear>
     <extreme>weatherBackgrounds/extreme.jpeg</extreme>
-</imageLocations>
+</iconLocations>
