@@ -1,11 +1,12 @@
 package weather;
 
-import static org.junit.Assert.*;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class TemperatureTest {
 
-	private final double tempValue = 0.0;
+	private static final double tempValue = 0.0;
 
 	@Test
 	public void getUnit_shouldReturnUnit() {

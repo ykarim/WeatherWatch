@@ -9,7 +9,7 @@ public class Forecast {
 	
 	public Forecast(Weather weather, Date timeOfWeather) {
 		this.weather = weather;
-		this.timeOfWeather = timeOfWeather;
+		this.timeOfWeather = new Date(timeOfWeather.getTime());
 	}
 
 	public Weather getWeather() {
@@ -21,10 +21,10 @@ public class Forecast {
 	}
 
 	public Date getTimeOfWeather() {
-		return timeOfWeather;
+		return new Date(timeOfWeather.getTime());
 	}
 
 	public void setTimeOfWeather(Date timeOfWeather) {
-		this.timeOfWeather = timeOfWeather;
+		this.timeOfWeather = new Date(timeOfWeather.getTime());
 	}
 }

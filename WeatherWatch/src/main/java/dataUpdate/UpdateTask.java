@@ -1,4 +1,4 @@
-package queue;
+package dataUpdate;
 
 public interface UpdateTask {
 

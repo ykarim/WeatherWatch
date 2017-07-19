@@ -14,7 +14,7 @@ public class ForecastDAOTest {
 
     @Test
     public void testGetForecasts() {
-        Forecast testForecast = new Forecast(null, null);
+        Forecast testForecast = new Forecast(new Weather(), new Date());
         ArrayList<Forecast> forecasts = new ArrayList<>();
         forecasts.add(testForecast);
         forecastDAO.removeForecasts();
