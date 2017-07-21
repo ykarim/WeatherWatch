@@ -2,6 +2,7 @@ package network;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import util.FileLoad;
 import weather.Forecast;
 import weather.Temperature;
 import weather.Weather;
@@ -16,6 +17,7 @@ import java.util.List;
 public class DataFormat {
 
     private static WeatherCodes weatherCodes = new WeatherCodes();
+    private static FileLoad fileLoad = new FileLoad();
 
     public static Weather convertJSONToWeatherObj(String jsonString) {
         Weather weatherObj = new Weather();
@@ -30,6 +32,7 @@ public class DataFormat {
             JsonObject object = json.getAsJsonArray("weather").get(index).getAsJsonObject();
             weatherObj.getCondition().add(
                     weatherCodes.getConditionFromCode(Integer.parseInt(object.get("id").toString())));
+            weatherObj.setIcon(fileLoad.loadImageFromService(object.get("icon").getAsString()));
         }
         return weatherObj;
     }

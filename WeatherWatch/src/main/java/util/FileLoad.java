@@ -2,6 +2,7 @@ package util;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
+import network.Requests;
 import org.w3c.dom.Element;
 
 import javax.imageio.ImageIO;
@@ -20,6 +21,15 @@ public class FileLoad {
     public Image loadImageFile(String fileName) {
         try {
             return SwingFXUtils.toFXImage(ImageIO.read(load(fileName)), null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Image loadImageFromService(String iconCode) {
+        try {
+            return SwingFXUtils.toFXImage(ImageIO.read(Requests.requestImageByIconCode(iconCode)), null);
         } catch (IOException e) {
             e.printStackTrace();
         }

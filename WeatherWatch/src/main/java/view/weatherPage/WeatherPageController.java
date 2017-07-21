@@ -4,21 +4,22 @@ import dao.WeatherDAO;
 import javafx.scene.image.Image;
 import util.Constants;
 import util.WeatherImgImport;
+import weather.Temperature;
 import weather.Weather;
 
-public class WeatherPageController {
+class WeatherPageController {
 
     private WeatherDAO weatherDAO = new WeatherDAO();
 
-    public Image getWeatherIcon() {
+    Image getWeatherIcon() {
         if (weatherDAO.getLatestWeather() != null) {
-            return WeatherImgImport.getIconImage(weatherDAO.getLatestWeather().getCondition().get(0));
+            return weatherDAO.getLatestWeather().getIcon();
         } else {
             return null;
         }
     }
 
-    public Image getWeatherBackground() {
+    Image getWeatherBackground() {
         if (weatherDAO.getLatestWeather() != null) {
             return WeatherImgImport.getBackgroundImage(weatherDAO.getLatestWeather().getCondition().get(0));
         } else {
@@ -26,7 +27,7 @@ public class WeatherPageController {
         }
     }
 
-    public String getCurrentWeatherConditionText() {
+    String getCurrentWeatherConditionText() {
         Weather latestWeather = weatherDAO.getLatestWeather();
         if (latestWeather != null) {
             StringBuilder builder = new StringBuilder();
@@ -41,19 +42,22 @@ public class WeatherPageController {
         return "???";
     }
 
-    public String getCurrentWeatherTemperatureText() {
+    String getCurrentWeatherTemperatureText() {
         Weather latestWeather = weatherDAO.getLatestWeather();
         if (latestWeather != null) {
             switch (Constants.PREFERRED_UNIT) {
                 case CELSIUS:
                     final String degreeCelsius = "\u2103";
-                    return Double.toString(latestWeather.getTemperature().getTemperatureValue()) + degreeCelsius;
+                    return Double.toString(latestWeather.getTemperature().getTemperatureValue(Temperature.Unit.CELSIUS))
+                            + degreeCelsius;
                 case FAHRENHEIT:
                     final String degreeFahrenheit = "\u2109";
-                    return Double.toString(latestWeather.getTemperature().getTemperatureValue()) + degreeFahrenheit;
+                    return Double.toString(latestWeather.getTemperature().getTemperatureValue(Temperature.Unit.FAHRENHEIT))
+                            + degreeFahrenheit;
                 case KELVIN:
                     final String degreeKelvin = "\u212A";
-                    return Double.toString(latestWeather.getTemperature().getTemperatureValue()) + degreeKelvin;
+                    return Double.toString(latestWeather.getTemperature().getTemperatureValue(Temperature.Unit.KELVIN))
+                            + degreeKelvin;
             }
         }
         return "???";

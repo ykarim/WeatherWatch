@@ -1,5 +1,7 @@
 package weather;
 
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,7 @@ public class Weather {
 
     private List<WeatherCondition> condition;
     private Temperature temperature;
+    private Image icon;
 
     public Weather() {
         condition = new ArrayList<>();
@@ -15,8 +18,14 @@ public class Weather {
 
     public Weather(List<WeatherCondition> condition, Temperature temperature) {
         this.condition = condition;
-		this.temperature = temperature;
-	}
+        this.temperature = temperature;
+    }
+
+    public Weather(List<WeatherCondition> condition, Temperature temperature, Image icon) {
+        this.condition = condition;
+        this.temperature = temperature;
+        this.icon = icon;
+    }
 
     public List<WeatherCondition> getCondition() {
         return condition;
@@ -33,6 +42,14 @@ public class Weather {
 	public void setTemperature(Temperature temperature) {
 		this.temperature = temperature;
 	}
+
+    public Image getIcon() {
+        return icon;
+    }
+
+    public void setIcon(Image icon) {
+        this.icon = icon;
+    }
 
     public enum WeatherCondition {
         THUNDERSTORM("Thunderstorm"),
