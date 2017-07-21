@@ -35,13 +35,13 @@ public class Weather {
 	}
 
     public enum WeatherCondition {
-        THUNDERSTORM("thunderstorm"),
-        DRIZZLE("drizzle"),
-        RAIN("rain"),
-        SNOW("snow"),
-        ATMOSPHERE("atmosphere"),
-        CLEAR("clear"),
-        EXTREME("extreme");
+        THUNDERSTORM("Thunderstorm"),
+        DRIZZLE("Drizzle"),
+        RAIN("Rain"),
+        SNOW("Snow"),
+        ATMOSPHERE("Atmosphere"),
+        CLEAR("Clear"),
+        EXTREME("Extreme");
 
         private String name;
 

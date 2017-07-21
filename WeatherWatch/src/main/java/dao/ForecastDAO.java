@@ -26,6 +26,10 @@ public class ForecastDAO {
     }
 
     public Forecast getLatestForecast() {
-        return (ForecastDAO.getForecasts().get(forecasts.size() - 1));
+        if (forecasts.size() != 0) {
+            return (ForecastDAO.getForecasts().get(forecasts.size() - 1));
+        } else {
+            return null;
+        }
     }
 }

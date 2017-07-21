@@ -21,6 +21,10 @@ public class WeatherDAO {
     }
 
     public Weather getLatestWeather() {
-        return weatherData.get(weatherData.size() - 1);
+        if (weatherData.size() != 0) {
+            return weatherData.get(weatherData.size() - 1);
+        } else {
+            return null;
+        }
     }
 }

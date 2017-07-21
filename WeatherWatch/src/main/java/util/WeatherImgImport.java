@@ -1,11 +1,13 @@
 package util;
 
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import weather.Weather;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class WeatherImgImport {
@@ -63,7 +65,7 @@ public class WeatherImgImport {
     }
 
     private static String getTextValue(Element xml, Weather.WeatherCondition tag) {
-        NodeList nl = xml.getElementsByTagName(tag.getName());
+        NodeList nl = xml.getElementsByTagName(tag.getName().toLowerCase());
         if (nl.getLength() > 0 && nl.item(0).hasChildNodes()) {
             return nl.item(0).getFirstChild().getNodeValue();
         }
@@ -75,7 +77,8 @@ public class WeatherImgImport {
         if (imgLocation != null) {
             if (!imgLocation.isEmpty()) {
                 try {
-                    return ImageIO.read(fileLoader.load(imgLocation));
+                    BufferedImage image = ImageIO.read(fileLoader.load(imgLocation));
+                    return SwingFXUtils.toFXImage(image, null);
                 } catch (IOException io) {
                     io.printStackTrace();
                 }

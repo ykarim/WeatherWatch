@@ -2,13 +2,13 @@ package weather;
 
 public class Temperature {
 
-	public double temperature;
+    private double temperatureValue;
     private Unit unit;
 
-    public Temperature(Unit unit, double temperature) {
-		this.unit = unit;
-		this.temperature = temperature;
-	}
+    public Temperature(Unit unit, double temperatureValue) {
+        this.unit = unit;
+        this.temperatureValue = temperatureValue;
+    }
 
     public Unit getUnit() {
 		return unit;
@@ -16,18 +16,22 @@ public class Temperature {
 
 	public void setUnit(Unit unit) {
 		if (this.unit != null && unit != null) {
-            this.temperature = convertTemp(temperature, unit);
+            this.temperatureValue = convertTemp(temperatureValue, unit);
             this.unit = unit;
         }
 	}
 
-	public double getTemperature(Unit desiredUnit) {
-		return convertTemp(temperature, desiredUnit);
-	}
+    public double getTemperatureValue() {
+        return temperatureValue;
+    }
 
-	public void setTemperature(double temperature) {
-		this.temperature = temperature;
-	}
+    public void setTemperatureValue(double temperatureValue) {
+        this.temperatureValue = temperatureValue;
+    }
+
+    public double getTemperatureValue(Unit desiredUnit) {
+        return convertTemp(temperatureValue, desiredUnit);
+    }
 
 	private double convertTemp(double tempVal, Unit desiredUnit) {
 		if (desiredUnit != null && desiredUnit != unit) {
