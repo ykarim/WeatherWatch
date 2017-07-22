@@ -1,11 +1,18 @@
 package weather;
 
+import java.math.BigDecimal;
+
 public class Temperature {
 
-    private double temperatureValue;
+    private BigDecimal temperatureValue;
     private Unit unit;
 
     public Temperature(Unit unit, double temperatureValue) {
+        this.unit = unit;
+        this.temperatureValue = new BigDecimal(temperatureValue);
+    }
+
+    public Temperature(Unit unit, BigDecimal temperatureValue) {
         this.unit = unit;
         this.temperatureValue = temperatureValue;
     }
@@ -21,32 +28,38 @@ public class Temperature {
         }
 	}
 
-    public double getTemperatureValue() {
+    public BigDecimal getTemperatureValue() {
         return temperatureValue;
     }
 
-    public void setTemperatureValue(double temperatureValue) {
+    public void setTemperatureValue(BigDecimal temperatureValue) {
         this.temperatureValue = temperatureValue;
     }
 
-    public double getTemperatureValue(Unit desiredUnit) {
+    public BigDecimal getTemperatureValue(Unit desiredUnit) {
         return convertTemp(temperatureValue, desiredUnit);
     }
 
-	private double convertTemp(double tempVal, Unit desiredUnit) {
-		if (desiredUnit != null && desiredUnit != unit) {
+    private BigDecimal convertTemp(BigDecimal tempVal, Unit desiredUnit) {
+        if (desiredUnit != null && desiredUnit != unit) {
             if (unit == Unit.CELSIUS && desiredUnit == Unit.FAHRENHEIT) {
-                tempVal = tempVal * 1.8 + 32;
+                tempVal = tempVal.multiply(new BigDecimal(1.8))
+                        .add(new BigDecimal(32));
             } else if (unit == Unit.FAHRENHEIT && desiredUnit == Unit.CELSIUS) {
-                tempVal = (tempVal - 32) * 5/9;
+                tempVal = tempVal.subtract(new BigDecimal(32))
+                        .multiply(new BigDecimal((double) 5 / 9));
             } else if (unit == Unit.FAHRENHEIT && desiredUnit == Unit.KELVIN) {
-                tempVal = ((tempVal - 32) / 1.8) + 273.15;
+                tempVal = tempVal.subtract(new BigDecimal(32))
+                        .divide(new BigDecimal(1.8))
+                        .add(new BigDecimal(273.15));
             } else if (unit == Unit.KELVIN && desiredUnit == Unit.FAHRENHEIT) {
-                tempVal = 1.8 * (tempVal - 273.15) + 32;
+                tempVal = tempVal.subtract(new BigDecimal(273.15))
+                        .multiply(new BigDecimal(1.8))
+                        .add(new BigDecimal(32));
             } else if (unit == Unit.CELSIUS && desiredUnit == Unit.KELVIN) {
-                tempVal = tempVal + 273.15;
+                tempVal = tempVal.add(new BigDecimal(273.15));
             } else if (unit == Unit.KELVIN && desiredUnit == Unit.CELSIUS) {
-                tempVal = tempVal - 273.15;
+                tempVal = tempVal.subtract(new BigDecimal(273.15));
             }
 		}
 		return tempVal;

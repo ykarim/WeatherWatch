@@ -18,4 +18,6 @@ public class Constants {
     public static String CUSTOM_ICON_IMAGE_FOLDER;
 
     public static String CUSTOM_WEATHER_CODE_DEFINITIONS;
+
+    public static int NUM_DECIMAL_PLACES = 2;
 }
