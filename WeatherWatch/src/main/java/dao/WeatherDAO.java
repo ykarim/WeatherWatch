@@ -1,5 +1,6 @@
 package dao;
 
+import watcher.WatchDAO;
 import weather.Weather;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class WeatherDAO {
 
     public void addWeatherData(Weather weather) {
         weatherData.add(weather);
+        WatchDAO.notifyWatchers();
     }
 
     public void removeWeatherData() {

@@ -11,7 +11,6 @@ public class Constants {
     public static String PREFERRED_ZIP;
     public static String PREFERRED_COUNTRY_CODE = "us";
 
-
     public static Temperature.Unit PREFERRED_UNIT = Temperature.Unit.FAHRENHEIT;
 
     public static String CUSTOM_BKG_IMAGE_FOLDER;
@@ -20,4 +19,7 @@ public class Constants {
     public static String CUSTOM_WEATHER_CODE_DEFINITIONS;
 
     public static int NUM_DECIMAL_PLACES = 2;
+
+    public static int WEATHER_UPDATE_PERIOD_MINUTES = 10;
+    public static int FORECAST_UPDATE_PERIOD_MINUTES = 10;
 }

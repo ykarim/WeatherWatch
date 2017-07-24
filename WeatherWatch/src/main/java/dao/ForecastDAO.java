@@ -1,5 +1,6 @@
 package dao;
 
+import watcher.WatchDAO;
 import weather.Forecast;
 
 import java.util.ArrayList;
@@ -15,10 +16,12 @@ public class ForecastDAO {
 
     public void addForecast(Forecast forecast) {
         forecasts.add(forecast);
+        WatchDAO.notifyWatchers();
     }
 
     public void addForecasts(List<Forecast> forecasts) {
         ForecastDAO.forecasts.addAll(forecasts);
+        WatchDAO.notifyWatchers();
     }
 
     public void removeForecasts() {

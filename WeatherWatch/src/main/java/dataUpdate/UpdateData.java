@@ -17,6 +17,7 @@ public class UpdateData {
                 updateWeather((WeatherTask) updateTask, delay, period);
             } else {
                 stopWeatherUpdates();
+                weatherTimer = new Timer();
                 updateWeather((WeatherTask) updateTask, delay, period);
             }
         } else if (updateTask instanceof ForecastTask) {
@@ -24,13 +25,14 @@ public class UpdateData {
                 updateForecast((ForecastTask) updateTask, delay, period);
             } else {
                 stopForecastUpdates();
+                forecastTimer = new Timer();
                 updateForecast((ForecastTask) updateTask, delay, period);
             }
         }
     }
 
     private static void updateWeather(WeatherTask task, long delay, long period) {
-        weatherTimer.scheduleAtFixedRate(task, delay, period);
+        weatherTimer.scheduleAtFixedRate(task, delay * 60 * 1000, period * 60 * 1000);
         weatherTasks.add(task);
     }
 
@@ -41,7 +43,7 @@ public class UpdateData {
     }
 
     private static void updateForecast(ForecastTask task, long delay, long period) {
-        forecastTimer.scheduleAtFixedRate(task, delay, period);
+        forecastTimer.scheduleAtFixedRate(task, delay * 60 * 1000, period * 60 * 1000);
         forecastTasks.add(task);
     }
 
