@@ -9,7 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import util.FileLoad;
@@ -62,10 +62,8 @@ public class WeatherPage extends Application implements Watcher {
     }
 
     private void addGuiElements() {
-        if (controller.getWeatherBackground() != null) {
-            BackgroundImage image = new BackgroundImage(controller.getWeatherBackground(), BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-            gridPane.setBackground(new Background(image));
+        if (controller.getWeatherBackgroundClass() != null) {
+            gridPane.setId(controller.getWeatherBackgroundClass());
         }
 
         weatherIconView = new ImageView(controller.getWeatherIcon() != null ?
@@ -98,16 +96,14 @@ public class WeatherPage extends Application implements Watcher {
 
     @Override
     public void updateData() {
-        if (controller.getWeatherBackground() != null) {
-            BackgroundImage image = new BackgroundImage(controller.getWeatherBackground(), BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-            gridPane.setBackground(new Background(image));
+        if (controller.getWeatherBackgroundClass() != null) {
+            gridPane.setId(controller.getWeatherBackgroundClass());
         }
 
         if (controller.getWeatherIcon() != null) {
             weatherIconView.setImage(controller.getWeatherIcon());
         } else {
-            //Set image to ??? image
+            weatherIconView.setImage(fileLoad.loadImageFile(NO_IMAGE_LOCATION));
         }
 
         txt_temperature.setText(controller.getCurrentWeatherTemperatureText());

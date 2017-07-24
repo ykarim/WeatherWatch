@@ -3,7 +3,6 @@ package view.weatherPage;
 import dao.WeatherDAO;
 import javafx.scene.image.Image;
 import util.Constants;
-import util.WeatherImgImport;
 import weather.Temperature;
 import weather.Weather;
 
@@ -22,9 +21,9 @@ class WeatherPageController {
         }
     }
 
-    Image getWeatherBackground() {
+    String getWeatherBackgroundClass() {
         if (weatherDAO.getLatestWeather() != null) {
-            return WeatherImgImport.getBackgroundImage(weatherDAO.getLatestWeather().getCondition().get(0));
+            return weatherDAO.getLatestWeather().getCondition().get(0).getName().toLowerCase();
         } else {
             return null;
         }
