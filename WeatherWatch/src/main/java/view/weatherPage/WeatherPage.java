@@ -22,6 +22,8 @@ import watcher.Watcher;
 public class WeatherPage extends Application implements Watcher {
 
     private final String EDIT_ICON_LOCATION = "gui/ic_edit/web/ic_edit_black_24dp_1x.png";
+    private final String NO_IMAGE_LOCATION = "weatherIcons/no_image_available.png";
+
     private Stage stage;
     private GridPane gridPane;
     private WeatherPageController controller = new WeatherPageController();
@@ -66,10 +68,8 @@ public class WeatherPage extends Application implements Watcher {
             gridPane.setBackground(new Background(image));
         }
 
-        weatherIconView = new ImageView();
-        if (controller.getWeatherIcon() != null) {
-            weatherIconView = new ImageView(controller.getWeatherIcon());
-        }
+        weatherIconView = new ImageView(controller.getWeatherIcon() != null ?
+                controller.getWeatherIcon() : fileLoad.loadImageFile(NO_IMAGE_LOCATION));
         weatherIconView.setFitHeight(150);
         weatherIconView.setFitWidth(150);
         gridPane.add(weatherIconView, 0, 0);
