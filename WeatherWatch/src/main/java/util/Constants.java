@@ -6,10 +6,10 @@ public class Constants {
 
     public static boolean FIRST_RUN = false;
 
-    public static boolean PREFER_CITY_NAME_OVER_ZIP;
+    public static Boolean PREFER_CITY_NAME_OVER_ZIP = true;
     public static String PREFERRED_CITY_NAME;
     public static String PREFERRED_ZIP;
-    public static String PREFERRED_COUNTRY_CODE;
+    public static String PREFERRED_COUNTRY_CODE = "us";
 
 
     public static Temperature.Unit PREFERRED_UNIT = Temperature.Unit.FAHRENHEIT;

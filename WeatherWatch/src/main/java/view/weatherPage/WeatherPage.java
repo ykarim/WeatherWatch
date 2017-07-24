@@ -17,6 +17,7 @@ import view.settingsPage.SettingsPage;
 
 public class WeatherPage extends Application {
 
+    private final String EDIT_ICON_LOCATION = "gui/ic_edit/web/ic_edit_black_24dp_1x.png";
     private Stage stage;
     private GridPane gridPane;
     private WeatherPageController controller = new WeatherPageController();
@@ -40,10 +41,10 @@ public class WeatherPage extends Application {
 
         gridPane.getStylesheets().add(this.getClass().getClassLoader().getResource("gui/css/weatherwatch.css")
                 .toExternalForm());
-        addGuiObjects();
+        addGuiElements();
     }
 
-    private void addGuiObjects() {
+    private void addGuiElements() {
         if (controller.getWeatherBackground() != null) {
             BackgroundImage image = new BackgroundImage(controller.getWeatherBackground(), BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
@@ -67,14 +68,14 @@ public class WeatherPage extends Application {
         gridPane.add(txt_condition, 1, 1);
 
         Button btn_edit_settings = new Button();
-        ImageView imgView = new ImageView(fileLoad.loadImageFile("gui/ic_edit/web/ic_edit_black_24dp_1x.png"));
+        ImageView imgView = new ImageView(fileLoad.loadImageFile(EDIT_ICON_LOCATION));
         btn_edit_settings.setGraphic(imgView);
         gridPane.add(btn_edit_settings, 2, 0);
 
         btn_edit_settings.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                SettingsPage settingsPage = new SettingsPage();
+                SettingsPage settingsPage = new SettingsPage(gridPane, stage);
                 stage.getScene().setRoot(settingsPage.getRootPane());
             }
         });
