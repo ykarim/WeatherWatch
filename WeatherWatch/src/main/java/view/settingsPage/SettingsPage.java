@@ -7,6 +7,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -14,6 +16,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import util.FileLoad;
 import weather.Temperature;
+
 
 public class SettingsPage {
 
@@ -52,6 +55,7 @@ public class SettingsPage {
         gridPane.setPadding(new Insets(10, 10, 10, 10));
 
         addGuiElements();
+        addListeners();
     }
 
     public Pane getRootPane() {
@@ -65,13 +69,6 @@ public class SettingsPage {
         GridPane.setValignment(btn_back, VPos.TOP);
         GridPane.setHgrow(btn_back, Priority.ALWAYS);
         gridPane.add(btn_back, 0, 0);
-
-        btn_back.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                stage.getScene().setRoot(parentPane);
-            }
-        });
 
         lbl_title = new Text();
         lbl_title.setText("Settings");
@@ -173,32 +170,63 @@ public class SettingsPage {
         btn_submit = new Button("Submit");
         GridPane.setHalignment(btn_submit, HPos.RIGHT);
         gridPane.add(btn_submit, 2, 4);
+    }
+
+    private void addListeners() {
+        btn_back.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                stage.getScene().setRoot(parentPane);
+            }
+        });
+
+        txt_location.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.ENTER) {
+                    submitData();
+                }
+            }
+        });
 
         btn_submit.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Boolean locationPreference = null;
-                if (toggle_location_preference.getSelectedToggle() == radio_city_name) {
-                    locationPreference = true;
-                } else if (toggle_location_preference.getSelectedToggle() == radio_city_zip) {
-                    locationPreference = false;
-                }
+                submitData();
+            }
+        });
 
-                Temperature.Unit preferredUnit = null;
-                if (toggle_preferred_unit.getSelectedToggle() == radio_fahrenheit) {
-                    preferredUnit = Temperature.Unit.FAHRENHEIT;
-                } else if (toggle_preferred_unit.getSelectedToggle() == radio_celsius) {
-                    preferredUnit = Temperature.Unit.CELSIUS;
-                } else if (toggle_preferred_unit.getSelectedToggle() == radio_kelvin) {
-                    preferredUnit = Temperature.Unit.KELVIN;
-                }
-
-                if (validateInput()) {
-                    controller.submitData(locationPreference, txt_location.getText().trim(), preferredUnit);
-                    stage.getScene().setRoot(parentPane);
+        btn_submit.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.ENTER) {
+                    submitData();
                 }
             }
         });
+    }
+
+    private void submitData() {
+        Boolean locationPreference = null;
+        if (toggle_location_preference.getSelectedToggle() == radio_city_name) {
+            locationPreference = true;
+        } else if (toggle_location_preference.getSelectedToggle() == radio_city_zip) {
+            locationPreference = false;
+        }
+
+        Temperature.Unit preferredUnit = null;
+        if (toggle_preferred_unit.getSelectedToggle() == radio_fahrenheit) {
+            preferredUnit = Temperature.Unit.FAHRENHEIT;
+        } else if (toggle_preferred_unit.getSelectedToggle() == radio_celsius) {
+            preferredUnit = Temperature.Unit.CELSIUS;
+        } else if (toggle_preferred_unit.getSelectedToggle() == radio_kelvin) {
+            preferredUnit = Temperature.Unit.KELVIN;
+        }
+
+        if (validateInput()) {
+            controller.submitData(locationPreference, txt_location.getText().trim(), preferredUnit);
+            stage.getScene().setRoot(parentPane);
+        }
     }
 
     private boolean validateInput() {
