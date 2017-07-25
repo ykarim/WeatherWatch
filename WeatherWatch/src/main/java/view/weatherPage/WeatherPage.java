@@ -4,12 +4,16 @@ import dataUpdate.UpdateData;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import util.FileLoad;
@@ -44,7 +48,6 @@ public class WeatherPage extends Application implements Watcher {
         gridPane.setAlignment(Pos.TOP_LEFT);
         gridPane.setHgap(10);
         gridPane.setVgap(10);
-        gridPane.setGridLinesVisible(true);
         gridPane.setPadding(new Insets(10, 10, 10, 10));
 
         Scene scene = new Scene(gridPane, ViewConstants.PROGRAM_WIDTH, ViewConstants.PROGRAM_HEIGHT);
@@ -68,22 +71,49 @@ public class WeatherPage extends Application implements Watcher {
 
         weatherIconView = new ImageView(controller.getWeatherIcon() != null ?
                 controller.getWeatherIcon() : fileLoad.loadImageFile(NO_IMAGE_LOCATION));
-        weatherIconView.setFitHeight(150);
-        weatherIconView.setFitWidth(150);
+        weatherIconView.fitWidthProperty().bind(stage.widthProperty().divide(3));
+        weatherIconView.fitHeightProperty().bind(stage.heightProperty().divide(2));
+        GridPane.setHgrow(weatherIconView, Priority.ALWAYS);
+        GridPane.setHalignment(weatherIconView, HPos.CENTER);
+        GridPane.setVgrow(weatherIconView, Priority.ALWAYS);
+        GridPane.setValignment(weatherIconView, VPos.CENTER);
         gridPane.add(weatherIconView, 0, 0);
+
+        GridPane gridPane_conditions = new GridPane();
+        gridPane_conditions.setHgap(10);
+        gridPane_conditions.setVgap(10);
+        GridPane.setHgrow(gridPane_conditions, Priority.ALWAYS);
+        GridPane.setHalignment(gridPane_conditions, HPos.CENTER);
+        GridPane.setVgrow(gridPane_conditions, Priority.ALWAYS);
+        GridPane.setValignment(gridPane_conditions, VPos.TOP);
+        gridPane.add(gridPane_conditions, 1, 0);
 
         txt_temperature = new Text();
         txt_temperature.setText(controller.getCurrentWeatherTemperatureText());
-        gridPane.add(txt_temperature, 1, 0);
+        txt_temperature.setFont(new Font(48));
+        GridPane.setHgrow(txt_temperature, Priority.ALWAYS);
+        GridPane.setHalignment(txt_temperature, HPos.LEFT);
+        GridPane.setVgrow(txt_temperature, Priority.ALWAYS);
+        GridPane.setValignment(txt_temperature, VPos.TOP);
+        gridPane_conditions.add(txt_temperature, 0, 0);
 
         txt_condition = new Text();
         txt_condition.setText(controller.getCurrentWeatherConditionText());
-        gridPane.add(txt_condition, 1, 1);
+        txt_condition.setFont(new Font(24));
+        GridPane.setHgrow(txt_condition, Priority.ALWAYS);
+        GridPane.setHalignment(txt_condition, HPos.LEFT);
+        GridPane.setVgrow(txt_condition, Priority.ALWAYS);
+        GridPane.setValignment(txt_condition, VPos.TOP);
+        gridPane_conditions.add(txt_condition, 0, 1);
 
         btn_edit_settings = new Button();
         ImageView imgView = new ImageView(fileLoad.loadImageFile(EDIT_ICON_LOCATION));
         btn_edit_settings.setGraphic(imgView);
-        gridPane.add(btn_edit_settings, 2, 0);
+        GridPane.setHgrow(btn_edit_settings, Priority.ALWAYS);
+        GridPane.setHalignment(btn_edit_settings, HPos.RIGHT);
+        GridPane.setVgrow(btn_edit_settings, Priority.ALWAYS);
+        GridPane.setValignment(btn_edit_settings, VPos.TOP);
+        gridPane.add(btn_edit_settings, 3, 0);
 
         btn_edit_settings.setOnAction(new EventHandler<ActionEvent>() {
             @Override

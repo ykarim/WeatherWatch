@@ -206,29 +206,6 @@ public class SettingsPage {
         });
     }
 
-    private void submitData() {
-        Boolean locationPreference = null;
-        if (toggle_location_preference.getSelectedToggle() == radio_city_name) {
-            locationPreference = true;
-        } else if (toggle_location_preference.getSelectedToggle() == radio_city_zip) {
-            locationPreference = false;
-        }
-
-        Temperature.Unit preferredUnit = null;
-        if (toggle_preferred_unit.getSelectedToggle() == radio_fahrenheit) {
-            preferredUnit = Temperature.Unit.FAHRENHEIT;
-        } else if (toggle_preferred_unit.getSelectedToggle() == radio_celsius) {
-            preferredUnit = Temperature.Unit.CELSIUS;
-        } else if (toggle_preferred_unit.getSelectedToggle() == radio_kelvin) {
-            preferredUnit = Temperature.Unit.KELVIN;
-        }
-
-        if (validateInput()) {
-            controller.submitData(locationPreference, txt_location.getText().trim(), preferredUnit);
-            stage.getScene().setRoot(parentPane);
-        }
-    }
-
     private boolean validateInput() {
         boolean correctInput = true;
 
@@ -274,5 +251,28 @@ public class SettingsPage {
         }
 
         return correctInput;
+    }
+
+    private void submitData() {
+        Boolean locationPreference = null;
+        if (toggle_location_preference.getSelectedToggle() == radio_city_name) {
+            locationPreference = true;
+        } else if (toggle_location_preference.getSelectedToggle() == radio_city_zip) {
+            locationPreference = false;
+        }
+
+        Temperature.Unit preferredUnit = null;
+        if (toggle_preferred_unit.getSelectedToggle() == radio_fahrenheit) {
+            preferredUnit = Temperature.Unit.FAHRENHEIT;
+        } else if (toggle_preferred_unit.getSelectedToggle() == radio_celsius) {
+            preferredUnit = Temperature.Unit.CELSIUS;
+        } else if (toggle_preferred_unit.getSelectedToggle() == radio_kelvin) {
+            preferredUnit = Temperature.Unit.KELVIN;
+        }
+
+        if (validateInput()) {
+            controller.submitData(locationPreference, txt_location.getText().trim(), preferredUnit);
+            stage.getScene().setRoot(parentPane);
+        }
     }
 }
