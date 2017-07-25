@@ -35,4 +35,13 @@ public class ForecastDAO {
             return null;
         }
     }
+
+    public Forecast getForecastForNthHour(int hour) {
+        for (Forecast forecast : forecasts) {
+            if (forecast.getTimeOfWeather().getHourOfDay() == hour) {
+                return forecast;
+            }
+        }
+        return null;
+    }
 }
