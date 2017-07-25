@@ -54,7 +54,7 @@ class SettingsPageController {
             UpdateData.addUpdater(new ForecastTask(Constants.PREFERRED_CITY_NAME),
                     0, Constants.FORECAST_UPDATE_PERIOD_MINUTES);
         } else if (!Constants.PREFER_CITY_NAME_OVER_ZIP) {
-            UpdateData.addUpdater(new WeatherTask(Constants.PREFERRED_ZIP, Constants.PREFERRED_ZIP),
+            UpdateData.addUpdater(new WeatherTask(Constants.PREFERRED_ZIP, Constants.PREFERRED_COUNTRY_CODE),
                     0, Constants.WEATHER_UPDATE_PERIOD_MINUTES);
             UpdateData.addUpdater(new ForecastTask(Constants.PREFERRED_ZIP, Constants.PREFERRED_COUNTRY_CODE),
                     0, Constants.FORECAST_UPDATE_PERIOD_MINUTES);
