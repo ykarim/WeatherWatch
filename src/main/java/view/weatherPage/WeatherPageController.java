@@ -35,9 +35,12 @@ class WeatherPageController {
             StringBuilder builder = new StringBuilder();
             for (Weather.WeatherCondition condition : latestWeather.getCondition()) {
                 builder.append(condition.getName());
-                if (latestWeather.getCondition().size() > 1) {
-                    builder.append(", ");
+                if (latestWeather.getCondition().indexOf(condition) != latestWeather.getCondition().size() - 1) {
+                    builder.append(",");
                 }
+            }
+            if (builder.toString().endsWith(",")) {
+
             }
             return builder.toString();
         }
