@@ -27,7 +27,8 @@ class SettingsPageController {
         return Constants.PREFERRED_UNIT;
     }
 
-    void submitData(Boolean PREFER_CITY_NAME_OVER_ZIP, String locationValue, Temperature.Unit preferredUnit) {
+    void submitData(Boolean PREFER_CITY_NAME_OVER_ZIP, String locationValue, Temperature.Unit preferredUnit,
+                    String dateTimeFormat) {
         if (PREFER_CITY_NAME_OVER_ZIP != null) {
             Constants.PREFER_CITY_NAME_OVER_ZIP = PREFER_CITY_NAME_OVER_ZIP;
         }
@@ -42,6 +43,10 @@ class SettingsPageController {
 
         if (preferredUnit != null) {
             Constants.PREFERRED_UNIT = preferredUnit;
+        }
+
+        if (dateTimeFormat != null) {
+            Constants.DATE_TIME_FORMAT = dateTimeFormat;
         }
 
         createUpdateTasks();

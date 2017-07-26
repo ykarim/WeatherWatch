@@ -14,6 +14,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.joda.time.format.DateTimeFormat;
+import util.Constants;
 import util.FileLoad;
 import weather.Temperature;
 
@@ -43,6 +45,9 @@ public class SettingsPage {
     private RadioButton radio_fahrenheit;
     private RadioButton radio_celsius;
     private RadioButton radio_kelvin;
+    private GridPane gridPane_date_format;
+    private Label lbl_date_format;
+    private TextField txt_date_format;
     private Button btn_submit;
 
     public SettingsPage(Pane parentPane, Stage stage) {
@@ -167,9 +172,25 @@ public class SettingsPage {
             toggle_preferred_unit.selectToggle(radio_kelvin);
         }
 
+        gridPane_date_format = new GridPane();
+        gridPane_date_format.setHgap(10);
+        gridPane_date_format.setVgap(10);
+        GridPane.setHgrow(gridPane_date_format, Priority.ALWAYS);
+        gridPane.add(gridPane_date_format, 1, 4);
+
+        lbl_date_format = new Label();
+        lbl_date_format.setText("Date Format :");
+        GridPane.setHgrow(lbl_date_format, Priority.ALWAYS);
+        gridPane_date_format.add(lbl_date_format, 0, 0);
+
+        txt_date_format = new TextField();
+        txt_date_format.setText(Constants.DATE_TIME_FORMAT);
+        GridPane.setHgrow(txt_date_format, Priority.ALWAYS);
+        gridPane_date_format.add(txt_date_format, 1, 0);
+
         btn_submit = new Button("Submit");
         GridPane.setHalignment(btn_submit, HPos.RIGHT);
-        gridPane.add(btn_submit, 2, 4);
+        gridPane.add(btn_submit, 2, 5);
     }
 
     private void addListeners() {
@@ -181,6 +202,15 @@ public class SettingsPage {
         });
 
         txt_location.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.ENTER) {
+                    submitData();
+                }
+            }
+        });
+
+        txt_date_format.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 if (event.getCode() == KeyCode.ENTER) {
@@ -250,6 +280,26 @@ public class SettingsPage {
                     gridPane_unit_preference.lookup("#" + required_unit_pref_id));
         }
 
+        //Check date format text field
+
+        if (txt_date_format.getText() == null || txt_date_format.getText().trim().isEmpty()) {
+
+            txt_date_format.setBorder(new Border(
+                    new BorderStroke(Color.RED, BorderStrokeStyle.SOLID,
+                            new CornerRadii(5), BorderWidths.DEFAULT)));
+            correctInput = false;
+        } else {
+            try {
+                DateTimeFormat.forPattern(txt_date_format.getText().trim());
+                txt_date_format.setBorder(null);
+            } catch (IllegalArgumentException illegalArgument) {
+                txt_date_format.setBorder(new Border(
+                        new BorderStroke(Color.RED, BorderStrokeStyle.SOLID,
+                                new CornerRadii(5), BorderWidths.DEFAULT)));
+                correctInput = false;
+            }
+        }
+
         return correctInput;
     }
 
@@ -271,7 +321,8 @@ public class SettingsPage {
         }
 
         if (validateInput()) {
-            controller.submitData(locationPreference, txt_location.getText().trim(), preferredUnit);
+            controller.submitData(locationPreference, txt_location.getText().trim(), preferredUnit,
+                    txt_date_format.getText().trim());
             stage.getScene().setRoot(parentPane);
         }
     }
