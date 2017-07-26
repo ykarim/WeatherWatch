@@ -8,23 +8,25 @@ import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import util.Constants;
 import util.FileLoad;
 import weather.Forecast;
 import weather.Temperature;
 
 import java.math.RoundingMode;
-import java.util.Date;
 
 import static util.Constants.NUM_DECIMAL_PLACES;
 
 public class ForecastDisplayPane extends GridPane {
 
     private final String NO_IMAGE_LOCATION = "weatherIcons/no_image_available.png";
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern(Constants.DATE_TIME_FORMAT);
+
     private Stage stage;
     private Forecast forecast;
-    private int hoursAhead;
+    private String timeOfWeather;
     private FileLoad fileLoad = new FileLoad();
 
     public ForecastDisplayPane(Stage stage, Forecast forecast) {
@@ -32,7 +34,7 @@ public class ForecastDisplayPane extends GridPane {
         this.forecast = forecast;
 
         if (forecast != null) {
-            this.hoursAhead = forecast.getTimeOfWeather().getHourOfDay() - new DateTime(new Date()).getHourOfDay();
+            this.timeOfWeather = dateTimeFormatter.print(forecast.getTimeOfWeather());
         }
 
         setupView();
@@ -43,7 +45,7 @@ public class ForecastDisplayPane extends GridPane {
         setVgap(10);
 
         Text txt_forecast_time = new Text();
-        txt_forecast_time.setText(hoursAhead + " hours ahead");
+        txt_forecast_time.setText(timeOfWeather);
         txt_forecast_time.setFont(new Font(16));
         GridPane.setHalignment(txt_forecast_time, HPos.CENTER);
         GridPane.setHgrow(txt_forecast_time, Priority.ALWAYS);

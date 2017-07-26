@@ -22,4 +22,6 @@ public class Constants {
 
     public static int WEATHER_UPDATE_PERIOD_MINUTES = 10;
     public static int FORECAST_UPDATE_PERIOD_MINUTES = 10;
+
+    public static String DATE_TIME_FORMAT = "hh:mm a";
 }
