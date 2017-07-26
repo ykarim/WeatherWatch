@@ -18,15 +18,15 @@ public class Temperature {
     }
 
     public Unit getUnit() {
-		return unit;
-	}
+        return unit;
+    }
 
-	public void setUnit(Unit unit) {
-		if (this.unit != null && unit != null) {
+    public void setUnit(Unit unit) {
+        if (this.unit != null && unit != null) {
             this.temperatureValue = convertTemp(temperatureValue, unit);
             this.unit = unit;
         }
-	}
+    }
 
     public BigDecimal getTemperatureValue() {
         return temperatureValue;
@@ -61,9 +61,9 @@ public class Temperature {
             } else if (unit == Unit.KELVIN && desiredUnit == Unit.CELSIUS) {
                 tempVal = tempVal.subtract(new BigDecimal(273.15));
             }
-		}
-		return tempVal;
-	}
+        }
+        return tempVal;
+    }
 
     public enum Unit {
         CELSIUS("CELSIUS"),

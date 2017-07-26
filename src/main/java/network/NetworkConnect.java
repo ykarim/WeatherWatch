@@ -10,18 +10,18 @@ public class NetworkConnect {
 
     public static String getData(URL url) {
         try {
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("GET");
-			conn.setRequestProperty("Accept", "application/json");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Accept", "application/json");
 
-			if(conn.getResponseCode() != 200) {
-				throw new RuntimeException("ERROR");
-			}
+            if (conn.getResponseCode() != 200) {
+                throw new RuntimeException("ERROR");
+            }
 
-			BufferedReader br = new BufferedReader(new InputStreamReader(
-					(conn.getInputStream())));
+            BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())));
 
-			String output;
+            String output;
             StringBuilder stringBuilder = new StringBuilder();
             while ((output = br.readLine()) != null) {
                 stringBuilder.append(output);
@@ -30,8 +30,8 @@ public class NetworkConnect {
             conn.disconnect();
             return output;
         } catch (IOException e) {
-	    	e.printStackTrace();
-	    }
+            e.printStackTrace();
+        }
         return null;
     }
 }

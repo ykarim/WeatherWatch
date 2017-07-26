@@ -14,7 +14,7 @@ public class Weather {
     public Weather() {
         condition = new ArrayList<>();
         temperature = new Temperature(Temperature.Unit.CELSIUS, 0);
-	}
+    }
 
     public Weather(List<WeatherCondition> condition, Temperature temperature) {
         this.condition = condition;
@@ -29,19 +29,19 @@ public class Weather {
 
     public List<WeatherCondition> getCondition() {
         return condition;
-	}
+    }
 
     public void setCondition(List<WeatherCondition> condition) {
         this.condition = condition;
-	}
+    }
 
-	public Temperature getTemperature() {
-		return temperature;
-	}
+    public Temperature getTemperature() {
+        return temperature;
+    }
 
-	public void setTemperature(Temperature temperature) {
-		this.temperature = temperature;
-	}
+    public void setTemperature(Temperature temperature) {
+        this.temperature = temperature;
+    }
 
     public Image getIcon() {
         return icon;
