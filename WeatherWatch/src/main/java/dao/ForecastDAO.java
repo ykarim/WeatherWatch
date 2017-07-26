@@ -36,6 +36,18 @@ public class ForecastDAO {
         }
     }
 
+    public List<Forecast> getLastNForecasts(int count) {
+        ArrayList<Forecast> forecastsToRetrieve = new ArrayList<>();
+
+        if (forecasts.size() > count) {
+            for (int index = 1; index <= count; index++) {
+                forecastsToRetrieve.add(forecasts.get(forecasts.size() - index));
+            }
+        }
+
+        return forecastsToRetrieve;
+    }
+
     public Forecast getForecastForNthHour(int hour) {
         for (Forecast forecast : forecasts) {
             if (forecast.getTimeOfWeather().getHourOfDay() == hour) {

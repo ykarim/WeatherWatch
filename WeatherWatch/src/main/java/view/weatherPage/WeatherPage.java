@@ -113,7 +113,7 @@ public class WeatherPage extends Application implements Watcher {
         GridPane.setHalignment(btn_edit_settings, HPos.RIGHT);
         GridPane.setVgrow(btn_edit_settings, Priority.ALWAYS);
         GridPane.setValignment(btn_edit_settings, VPos.TOP);
-        gridPane.add(btn_edit_settings, 3, 0);
+        gridPane.add(btn_edit_settings, 2, 0);
 
         btn_edit_settings.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -122,6 +122,11 @@ public class WeatherPage extends Application implements Watcher {
                 stage.getScene().setRoot(settingsPage.getRootPane());
             }
         });
+
+        ForecastsPane gridPane_forecasts = new ForecastsPane(stage);
+        GridPane.setHgrow(gridPane_forecasts, Priority.ALWAYS);
+        GridPane.setHalignment(gridPane_forecasts, HPos.CENTER);
+        gridPane.add(gridPane_forecasts, 0, 1, 3, 1);
     }
 
     @Override
