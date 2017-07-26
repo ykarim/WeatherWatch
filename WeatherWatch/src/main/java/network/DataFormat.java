@@ -2,6 +2,7 @@ package network;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import javafx.scene.image.Image;
 import util.FileLoad;
 import weather.Forecast;
 import weather.Temperature;
@@ -13,6 +14,7 @@ import java.util.List;
 
 /**
  * Formats obtained weather data into Weather obj.
+ * TODO:clean and comment
  */
 public class DataFormat {
 
@@ -45,16 +47,22 @@ public class DataFormat {
 
         for (int index = 0; index < json.getAsJsonArray("list").size(); index++) {
             JsonObject forecastsArray = json.getAsJsonArray("list").get(index).getAsJsonObject();
+
             List<Weather.WeatherCondition> conditions = new ArrayList<>();
+            Image weatherIcon = null;
+
             for (int conditionsIndex = 0; conditionsIndex < forecastsArray.getAsJsonArray("weather").size(); conditionsIndex++) {
                 JsonObject weatherConditionArray = forecastsArray.getAsJsonArray("weather").get(conditionsIndex).getAsJsonObject();
                 conditions.add(weatherCodes.getConditionFromCode(Integer.parseInt(weatherConditionArray.get("id").toString())));
+                weatherIcon = fileLoad.loadImageFromService(weatherConditionArray.get("icon").getAsString());
             }
+
             forecasts.add(new Forecast(
                     new Weather(conditions,
                             new Temperature(Temperature.Unit.KELVIN,
-                                    Double.parseDouble(forecastsArray.get("main").getAsJsonObject().get("temp").toString()))),
-                    new Date(forecastsArray.get("dt").getAsLong())));
+                                    Double.parseDouble(forecastsArray.get("main").getAsJsonObject().get("temp").toString())),
+                            weatherIcon),
+                    new Date(forecastsArray.get("dt").getAsLong() * 1000L)));
         }
 
         return forecasts;

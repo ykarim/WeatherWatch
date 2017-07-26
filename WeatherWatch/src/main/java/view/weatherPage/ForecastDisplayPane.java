@@ -5,6 +5,7 @@ import javafx.geometry.VPos;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.joda.time.DateTime;
@@ -43,6 +44,7 @@ public class ForecastDisplayPane extends GridPane {
 
         Text txt_forecast_time = new Text();
         txt_forecast_time.setText(hoursAhead + " hours ahead");
+        txt_forecast_time.setFont(new Font(16));
         GridPane.setHalignment(txt_forecast_time, HPos.CENTER);
         GridPane.setHgrow(txt_forecast_time, Priority.ALWAYS);
 
@@ -65,20 +67,24 @@ public class ForecastDisplayPane extends GridPane {
                     txt_temp.setText(forecast.getWeather().getTemperature().getTemperatureValue(Temperature.Unit.CELSIUS)
                             .setScale(NUM_DECIMAL_PLACES, RoundingMode.HALF_UP).toPlainString()
                             + degreeCelsius);
+                    break;
                 case FAHRENHEIT:
                     final String degreeFahrenheit = "\u2109";
                     txt_temp.setText(forecast.getWeather().getTemperature().getTemperatureValue(Temperature.Unit.FAHRENHEIT)
                             .setScale(NUM_DECIMAL_PLACES, RoundingMode.HALF_UP).toPlainString()
                             + degreeFahrenheit);
+                    break;
                 case KELVIN:
                     final String degreeKelvin = "\u212A";
                     txt_temp.setText(forecast.getWeather().getTemperature().getTemperatureValue(Temperature.Unit.KELVIN)
                             .setScale(NUM_DECIMAL_PLACES, RoundingMode.HALF_UP).toPlainString()
                             + degreeKelvin);
+                    break;
             }
         } else {
             txt_temp.setText("???");
         }
+        txt_temp.setFont(new Font(36));
         GridPane.setHalignment(txt_temp, HPos.CENTER);
         GridPane.setValignment(txt_temp, VPos.CENTER);
         GridPane.setHgrow(txt_temp, Priority.ALWAYS);

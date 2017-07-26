@@ -19,11 +19,13 @@ public class WeatherDataAccess {
     }
 
     public static void getForecastByName(String cityName) {
+        forecastDAO.removeForecasts();
         forecastDAO.addForecasts(DataFormat.convertJSONToForecastObjs(
                 NetworkConnect.getData(Requests.requestForecastByName(cityName))));
     }
 
     public static void getForecastByZip(String zipCode, String countryCode) {
+        forecastDAO.removeForecasts();
         forecastDAO.addForecasts(DataFormat.convertJSONToForecastObjs(
                 NetworkConnect.getData(Requests.requestForecastByZip(zipCode, countryCode))));
     }

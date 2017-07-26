@@ -37,7 +37,7 @@ public class ForecastsPane extends GridPane implements Watcher {
 
     private void getForecasts() {
         //TODO: Change to let user select number of forecasts
-        forecastList = forecastDAO.getLastNForecasts(3);
+        forecastList = ForecastDAO.getForecasts();
 
         if (forecastList.size() > 3) {
             forecastOne = forecastList.get(0);
@@ -68,6 +68,7 @@ public class ForecastsPane extends GridPane implements Watcher {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
+                getChildren().clear();
                 add(forecastOnePane, 0, 0);
                 add(forecastTwoPane, 1, 0);
                 add(forecastThreePane, 2, 0);
@@ -77,7 +78,7 @@ public class ForecastsPane extends GridPane implements Watcher {
 
     @Override
     public void updateData() {
-        forecastList = forecastDAO.getLastNForecasts(3);
+        forecastList = ForecastDAO.getForecasts();
 
         if (forecastList.size() > 3) {
             forecastOne = forecastList.get(0);

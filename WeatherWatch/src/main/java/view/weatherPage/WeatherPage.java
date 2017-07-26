@@ -91,6 +91,7 @@ public class WeatherPage extends Application implements Watcher {
         txt_temperature = new Text();
         txt_temperature.setText(controller.getCurrentWeatherTemperatureText());
         txt_temperature.setFont(new Font(48));
+        txt_temperature.setStyle("-fx-font-weight: bold");
         GridPane.setHgrow(txt_temperature, Priority.ALWAYS);
         GridPane.setHalignment(txt_temperature, HPos.LEFT);
         GridPane.setVgrow(txt_temperature, Priority.ALWAYS);
