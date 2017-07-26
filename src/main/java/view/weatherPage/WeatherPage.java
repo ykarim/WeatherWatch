@@ -42,7 +42,8 @@ public class WeatherPage extends Application implements Watcher {
     public void start(Stage primaryStage) throws Exception {
         WatchDAO.addWatcher(this);
         this.stage = primaryStage;
-        primaryStage.setTitle(ViewConstants.PROGRAM_TITLE);
+        stage.setTitle(ViewConstants.PROGRAM_TITLE);
+        stage.getIcons().add(fileLoad.loadImageFile(ViewConstants.PROGRAM_ICON_LOCATION));
 
         gridPane = new GridPane();
         gridPane.setAlignment(Pos.TOP_LEFT);
