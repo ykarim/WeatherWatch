@@ -2,6 +2,7 @@ package view.weatherPage;
 
 import dataUpdate.UpdateData;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -16,6 +17,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import notification.TrayApp;
 import util.FileLoad;
 import util.WeatherImgImport;
 import view.ViewConstants;
@@ -25,10 +27,9 @@ import watcher.Watcher;
 
 public class WeatherPage extends Application implements Watcher {
 
+    private static Stage stage;
     private final String EDIT_ICON_LOCATION = "gui/ic_edit/web/ic_edit_black_24dp_1x.png";
     private final String NO_IMAGE_LOCATION = "weatherIcons/no_image_available.png";
-
-    private Stage stage;
     private GridPane gridPane;
     private WeatherPageController controller = new WeatherPageController();
     private FileLoad fileLoad = new FileLoad();
@@ -38,10 +39,22 @@ public class WeatherPage extends Application implements Watcher {
     private Text txt_condition;
     private Button btn_edit_settings;
 
+    public static void showStage() {
+        if (stage != null) {
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    stage.show();
+                    stage.toFront();
+                }
+            });
+        }
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         WatchDAO.addWatcher(this);
-        this.stage = primaryStage;
+        stage = primaryStage;
         stage.setTitle(ViewConstants.PROGRAM_TITLE);
         stage.getIcons().add(fileLoad.loadImageFile(ViewConstants.PROGRAM_ICON_LOCATION));
 
@@ -59,6 +72,7 @@ public class WeatherPage extends Application implements Watcher {
                 .toExternalForm());
         loadWeatherImages();
         addGuiElements();
+        TrayApp.initialize();
     }
 
     private void loadWeatherImages() {
