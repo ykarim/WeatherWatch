@@ -16,12 +16,13 @@ public class ForecastDAO {
 
     public void addForecast(Forecast forecast) {
         forecasts.add(forecast);
-        WatchDAO.notifyWatchers();
+        WatchDAO.notifyWatchers(forecast);
     }
 
     public void addForecasts(List<Forecast> forecasts) {
-        ForecastDAO.forecasts.addAll(forecasts);
-        WatchDAO.notifyWatchers();
+        for (Forecast forecast : forecasts) {
+            addForecast(forecast);
+        }
     }
 
     public void removeForecasts() {

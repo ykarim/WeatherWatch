@@ -77,7 +77,7 @@ public class ForecastsPane extends GridPane implements Watcher {
     }
 
     @Override
-    public void updateData() {
+    public void updateData(Object updatedData) {
         forecastList = ForecastDAO.getForecasts();
 
         if (forecastList.size() > 3) {

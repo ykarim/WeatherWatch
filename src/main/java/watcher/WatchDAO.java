@@ -10,9 +10,9 @@ public class WatchDAO {
         daoWatchers.add(watcher);
     }
 
-    public static void notifyWatchers() {
+    public static void notifyWatchers(Object updatedData) {
         for (Watcher watcher : daoWatchers) {
-            watcher.updateData();
+            watcher.updateData(updatedData);
         }
     }
 }

@@ -2,5 +2,5 @@ package watcher;
 
 public interface Watcher {
 
-    void updateData();
+    void updateData(Object updatedData);
 }

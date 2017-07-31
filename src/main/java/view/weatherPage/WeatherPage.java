@@ -51,6 +51,10 @@ public class WeatherPage extends Application implements Watcher {
         }
     }
 
+    public static Stage getStage() {
+        return stage;
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         WatchDAO.addWatcher(this);
@@ -146,7 +150,7 @@ public class WeatherPage extends Application implements Watcher {
     }
 
     @Override
-    public void updateData() {
+    public void updateData(Object updatedData) {
         if (controller.getWeatherBackgroundClass() != null) {
             gridPane.setId(controller.getWeatherBackgroundClass());
         }
@@ -168,5 +172,4 @@ public class WeatherPage extends Application implements Watcher {
         UpdateData.stopForecastUpdates();
         super.stop();
     }
-
 }

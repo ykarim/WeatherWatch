@@ -1,6 +1,9 @@
 package util;
 
 import weather.Temperature;
+import weather.Weather;
+
+import java.util.ArrayList;
 
 public class Constants {
 
@@ -24,4 +27,8 @@ public class Constants {
     public static int FORECAST_UPDATE_PERIOD_MINUTES = 10;
 
     public static String DATE_TIME_FORMAT = "hh:mm a";
+
+    public static int NOTIFY_HOURS_AHEAD = 1;
+    public static ArrayList<Weather.WeatherCondition> CONDITIONS_TO_TRACK = new ArrayList<>();
+
 }

@@ -15,7 +15,7 @@ public class WeatherDAO {
 
     public void addWeatherData(Weather weather) {
         weatherData.add(weather);
-        WatchDAO.notifyWatchers();
+        WatchDAO.notifyWatchers(weather);
     }
 
     public void removeWeatherData() {
