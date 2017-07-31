@@ -21,6 +21,15 @@ public class NotificationService implements Watcher {
         scheduledExecutor = Executors.newSingleThreadScheduledExecutor();
     }
 
+    public static void startService(Weather.WeatherCondition... weatherConditions) {
+        startService();
+        if (weatherConditions != null) {
+            for (Weather.WeatherCondition condition : weatherConditions) {
+                addConditionToWatch(condition);
+            }
+        }
+    }
+
     public static void addConditionToWatch(Weather.WeatherCondition weatherCondition) {
         Constants.CONDITIONS_TO_TRACK.add(weatherCondition);
     }
