@@ -50,10 +50,6 @@ public class NotificationService implements Watcher {
         }, weatherEvent.getTimeOfNotif().getMillis() - new DateTime().getMillis(), TimeUnit.MILLISECONDS);
     }
 
-    private void addAsWatcher() {
-
-    }
-
     @Override
     public void updateData(Object updatedData) {
         if (scheduledExecutor != null) {
