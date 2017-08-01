@@ -5,6 +5,7 @@ import notification.events.WeatherEvent;
 import notification.view.NotificationDisplay;
 import org.joda.time.DateTime;
 import util.Constants;
+import watcher.WatchDAO;
 import watcher.Watcher;
 import weather.Forecast;
 import weather.Weather;
@@ -17,11 +18,12 @@ public class NotificationService implements Watcher {
 
     private static ScheduledExecutorService scheduledExecutor;
 
-    public static void startService() {
+    public void startService() {
         scheduledExecutor = Executors.newSingleThreadScheduledExecutor();
+        WatchDAO.addWatcher(this);
     }
 
-    public static void startService(Weather.WeatherCondition... weatherConditions) {
+    public void startService(Weather.WeatherCondition... weatherConditions) {
         startService();
         if (weatherConditions != null) {
             for (Weather.WeatherCondition condition : weatherConditions) {
@@ -30,11 +32,11 @@ public class NotificationService implements Watcher {
         }
     }
 
-    public static void addConditionToWatch(Weather.WeatherCondition weatherCondition) {
+    public void addConditionToWatch(Weather.WeatherCondition weatherCondition) {
         Constants.CONDITIONS_TO_TRACK.add(weatherCondition);
     }
 
-    private static void addNotification(final WeatherEvent weatherEvent) {
+    private void addNotification(final WeatherEvent weatherEvent) {
         scheduledExecutor.schedule(new Runnable() {
             @Override
             public void run() {
@@ -46,6 +48,10 @@ public class NotificationService implements Watcher {
                 });
             }
         }, weatherEvent.getTimeOfNotif().getMillis() - new DateTime().getMillis(), TimeUnit.MILLISECONDS);
+    }
+
+    private void addAsWatcher() {
+
     }
 
     @Override

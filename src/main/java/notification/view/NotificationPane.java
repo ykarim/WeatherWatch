@@ -23,7 +23,7 @@ public class NotificationPane extends GridPane {
 
         setVgap(10);
         setHgap(10);
-        setPadding(new Insets(10));
+        setPadding(new Insets(0, 10, 0, 10));
 
         setupView();
     }
@@ -32,7 +32,7 @@ public class NotificationPane extends GridPane {
         ImageView weatherIcon = new ImageView();
         weatherIcon.setImage(weatherEvent.getForecast().getWeather().getIcon());
         weatherIcon.fitWidthProperty().bind(stage.widthProperty().divide(3));
-        weatherIcon.fitHeightProperty().bind(stage.heightProperty().multiply(0.75));
+        weatherIcon.fitHeightProperty().bind(stage.heightProperty().multiply(1));
         GridPane.setHgrow(weatherIcon, Priority.ALWAYS);
         GridPane.setVgrow(weatherIcon, Priority.ALWAYS);
         GridPane.setHalignment(weatherIcon, HPos.CENTER);

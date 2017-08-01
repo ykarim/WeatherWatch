@@ -18,7 +18,7 @@ class NotificationPaneController {
     String getWeatherEventText() {
         StringBuilder weatherEventTextBuilder = new StringBuilder();
         weatherEventTextBuilder.append(weatherEvent.getCondition());
-        weatherEventTextBuilder.append("at");
+        weatherEventTextBuilder.append(" at ");
         weatherEventTextBuilder.append(dateTimeFormatter.print(weatherEvent.getForecast().getTimeOfWeather()));
         weatherEventTextBuilder.append(".");
         return weatherEventTextBuilder.toString();

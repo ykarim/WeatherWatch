@@ -9,5 +9,5 @@ public class ViewConstants {
     public static int PROGRAM_HEIGHT = 400;
 
     public static int NOTIFICATION_WIDTH = 250;
-    public static int NOTIFICATION_HEIGHT = 200;
+    public static int NOTIFICATION_HEIGHT = 75;
 }
