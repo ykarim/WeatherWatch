@@ -8,12 +8,11 @@ import weather.Weather;
 public class WeatherWatch {
 
     public static void main(String[] args) {
-        Thread thread = new Thread() {
+        new Thread() {
             public void run() {
                 Application.launch(WeatherPage.class);
             }
-        };
-        thread.start();
+        }.start();
         new NotificationService().startService(Weather.WeatherCondition.CLEAR);
     }
 }
