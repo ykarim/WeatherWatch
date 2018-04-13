@@ -1,2 +1,2 @@
 # WeatherWatch
-Desktop Gadget that provides realtime-weather forecasts
+Desktop Gadget that provides real-time weather forecasts and notifies users of upcoming weather events
