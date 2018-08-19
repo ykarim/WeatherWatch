@@ -1,4 +1,4 @@
-package view.weatherPage;
+package ui.weatherPage;
 
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;

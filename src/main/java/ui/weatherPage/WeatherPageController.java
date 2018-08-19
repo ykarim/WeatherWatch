@@ -1,4 +1,4 @@
-package view.weatherPage;
+package ui.weatherPage;
 
 import dao.WeatherDAO;
 import javafx.scene.image.Image;

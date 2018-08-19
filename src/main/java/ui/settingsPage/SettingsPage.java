@@ -1,4 +1,4 @@
-package view.settingsPage;
+package ui.settingsPage;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

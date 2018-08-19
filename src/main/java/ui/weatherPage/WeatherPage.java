@@ -1,4 +1,4 @@
-package view.weatherPage;
+package ui.weatherPage;
 
 import dataUpdate.UpdateData;
 import javafx.application.Application;
@@ -18,10 +18,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import notification.TrayApp;
+import ui.ViewConstants;
+import ui.settingsPage.SettingsPage;
 import util.FileLoad;
 import util.WeatherImgImport;
-import view.ViewConstants;
-import view.settingsPage.SettingsPage;
 import watcher.WatchDAO;
 import watcher.Watcher;
 
@@ -56,7 +56,7 @@ public class WeatherPage extends Application implements Watcher {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         WatchDAO.addWatcher(this);
         stage = primaryStage;
         stage.setTitle(ViewConstants.PROGRAM_TITLE);

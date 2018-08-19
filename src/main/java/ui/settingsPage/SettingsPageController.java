@@ -1,4 +1,4 @@
-package view.settingsPage;
+package ui.settingsPage;
 
 import dataUpdate.ForecastTask;
 import dataUpdate.UpdateData;

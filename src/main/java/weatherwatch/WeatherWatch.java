@@ -2,8 +2,7 @@ package weatherwatch;
 
 import javafx.application.Application;
 import notification.NotificationService;
-import view.weatherPage.WeatherPage;
-import weather.Weather;
+import ui.weatherPage.WeatherPage;
 
 public class WeatherWatch {
 
@@ -13,6 +12,6 @@ public class WeatherWatch {
                 Application.launch(WeatherPage.class);
             }
         }.start();
-        new NotificationService().startService(Weather.WeatherCondition.CLEAR);
+        new NotificationService().startService();
     }
 }

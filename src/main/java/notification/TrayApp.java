@@ -2,9 +2,9 @@ package notification;
 
 import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
+import ui.ViewConstants;
+import ui.weatherPage.WeatherPage;
 import util.FileLoad;
-import view.ViewConstants;
-import view.weatherPage.WeatherPage;
 
 import javax.swing.*;
 import java.awt.*;
