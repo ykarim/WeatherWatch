@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0"
+            xmlns="http://javafx.com/javafx/8.0.121" fx:controller="ui.dashboard.DashboardController">
+    <children>
+        <VBox fx:id="vBox_weatherPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+              prefHeight="500.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="230.0"
+                      prefWidth="260.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label fx:id="lbl_timeText" alignment="CENTER" contentDisplay="CENTER"
+                               maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                               textAlignment="CENTER"/>
+                        <Label fx:id="lbl_currentTemp" alignment="CENTER" maxHeight="1.7976931348623157E308"
+                               maxWidth="1.7976931348623157E308" textAlignment="CENTER" VBox.vgrow="ALWAYS"/>
+                        <Label fx:id="lbl_currentCond" alignment="CENTER" maxWidth="1.7976931348623157E308"
+                               textAlignment="CENTER">
+                            <VBox.margin>
+                                <Insets bottom="5.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <Label fx:id="lbl_location" alignment="BASELINE_CENTER" maxWidth="1.7976931348623157E308"
+                               textAlignment="CENTER"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </VBox>
+                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="230.0"
+                      prefWidth="260.0" VBox.vgrow="ALWAYS"/>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
