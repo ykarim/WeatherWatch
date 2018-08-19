@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class DashboardScene implements AppScene {
 
-    private String sceneLocation = "fxml/dashboard/dashboard.fxml";
+    private String sceneLocation = "ui/fxml/dashboard/dashboard.fxml";
     private Parent root;
     private DashboardController dashboardController;
     private boolean isStarted;

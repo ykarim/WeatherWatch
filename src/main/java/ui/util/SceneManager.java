@@ -15,7 +15,7 @@ public class SceneManager {
     //TODO: Take in bundle in add() and initialize controller
     public static void initProgram(Stage stage, AppScene appScene) {
         SceneManager.stage = stage;
-        SceneManager.mainScene = new Scene(appScene.start(), 600, 480);
+        SceneManager.mainScene = new Scene(appScene.start(), 500, 300);
         SceneManager.currentScene = appScene;
 
         //Add initial scene to scenes list
