@@ -1,38 +1,36 @@
 package weather;
 
-import javafx.scene.image.Image;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.joda.time.DateTime;
 
 public class Weather {
 
-    private List<WeatherCondition> condition;
+    private Location location;
     private Temperature temperature;
-    private Image icon;
+    private String condition;
+    private Double humidity;
+    private Double pressure;
+    private DateTime sunriseTime;
+    private DateTime sunsetTime;
+    private DateTime weatherTime;
 
-    public Weather() {
-        condition = new ArrayList<>();
-        temperature = new Temperature(Temperature.Unit.CELSIUS, 0);
-    }
-
-    public Weather(List<WeatherCondition> condition, Temperature temperature) {
-        this.condition = condition;
+    public Weather(Location location, Temperature temperature, String condition, Double humidity, Double pressure,
+                   DateTime sunriseTime, DateTime sunsetTime, DateTime weatherTime) {
+        this.location = location;
         this.temperature = temperature;
-    }
-
-    public Weather(List<WeatherCondition> condition, Temperature temperature, Image icon) {
         this.condition = condition;
-        this.temperature = temperature;
-        this.icon = icon;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        this.sunriseTime = sunriseTime;
+        this.sunsetTime = sunsetTime;
+        this.weatherTime = weatherTime;
     }
 
-    public List<WeatherCondition> getCondition() {
-        return condition;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setCondition(List<WeatherCondition> condition) {
-        this.condition = condition;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public Temperature getTemperature() {
@@ -43,31 +41,51 @@ public class Weather {
         this.temperature = temperature;
     }
 
-    public Image getIcon() {
-        return icon;
+    public String getCondition() {
+        return condition;
     }
 
-    public void setIcon(Image icon) {
-        this.icon = icon;
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 
-    public enum WeatherCondition {
-        THUNDERSTORM("Thunderstorm"),
-        DRIZZLE("Drizzle"),
-        RAIN("Rain"),
-        SNOW("Snow"),
-        ATMOSPHERE("Atmosphere"),
-        CLEAR("Clear"),
-        EXTREME("Extreme");
+    public Double getHumidity() {
+        return humidity;
+    }
 
-        private String name;
+    public void setHumidity(Double humidity) {
+        this.humidity = humidity;
+    }
 
-        WeatherCondition(String name) {
-            this.name = name;
-        }
+    public Double getPressure() {
+        return pressure;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public void setPressure(Double pressure) {
+        this.pressure = pressure;
+    }
+
+    public DateTime getSunriseTime() {
+        return sunriseTime;
+    }
+
+    public void setSunriseTime(DateTime sunriseTime) {
+        this.sunriseTime = sunriseTime;
+    }
+
+    public DateTime getSunsetTime() {
+        return sunsetTime;
+    }
+
+    public void setSunsetTime(DateTime sunsetTime) {
+        this.sunsetTime = sunsetTime;
+    }
+
+    public DateTime getWeatherTime() {
+        return weatherTime;
+    }
+
+    public void setWeatherTime(DateTime weatherTime) {
+        this.weatherTime = weatherTime;
     }
 }

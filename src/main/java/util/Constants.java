@@ -1,6 +1,6 @@
 package util;
 
-import weather.Temperature;
+import weather.TempUnit;
 import weather.Weather;
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class Constants {
     public static String PREFERRED_ZIP;
     public static String PREFERRED_COUNTRY_CODE = "us";
 
-    public static Temperature.Unit PREFERRED_UNIT = Temperature.Unit.FAHRENHEIT;
+    public static TempUnit PREFERRED_UNIT = TempUnit.FAHRENHEIT;
 
     public static String CUSTOM_BKG_IMAGE_FOLDER;
     public static String CUSTOM_ICON_IMAGE_FOLDER;

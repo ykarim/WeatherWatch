@@ -4,6 +4,7 @@ import org.joda.time.DateTime;
 
 import java.util.Date;
 
+//TODO: Remove class and add timeOfWeather to Weather obj to remove redundancy
 public class Forecast {
 
     private Weather weather;
@@ -35,7 +36,4 @@ public class Forecast {
         this.timeOfWeather = timeOfWeather;
     }
 
-    public void setTimeOfWeather(Date timeOfWeather) {
-        this.timeOfWeather = new DateTime(timeOfWeather);
-    }
 }
