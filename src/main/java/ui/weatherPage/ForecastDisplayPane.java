@@ -8,12 +8,12 @@ import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.Forecast;
+import model.Temperature;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import util.Constants;
 import util.FileLoad;
-import weather.Forecast;
-import weather.Temperature;
 
 import java.math.RoundingMode;
 

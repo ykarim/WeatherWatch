@@ -3,8 +3,8 @@ package ui.settingsPage;
 import dataUpdate.ForecastTask;
 import dataUpdate.UpdateData;
 import dataUpdate.WeatherTask;
+import model.Temperature;
 import util.Constants;
-import weather.Temperature;
 
 class SettingsPageController {
 

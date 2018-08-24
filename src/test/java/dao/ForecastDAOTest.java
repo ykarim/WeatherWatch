@@ -1,9 +1,9 @@
 package dao;
 
+import model.Forecast;
+import model.Weather;
 import org.junit.Assert;
 import org.junit.Test;
-import weather.Forecast;
-import weather.Weather;
 
 import java.util.ArrayList;
 import java.util.Date;

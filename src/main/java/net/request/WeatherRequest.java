@@ -1,8 +1,8 @@
 package net.request;
 
+import model.Location;
+import model.TempUnit;
 import org.apache.http.client.methods.HttpUriRequest;
-import weather.Location;
-import weather.TempUnit;
 
 public interface WeatherRequest {
 

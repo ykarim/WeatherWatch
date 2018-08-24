@@ -1,7 +1,7 @@
 package dao;
 
+import model.Forecast;
 import watcher.WatchDAO;
-import weather.Forecast;
 
 import java.util.ArrayList;
 import java.util.List;

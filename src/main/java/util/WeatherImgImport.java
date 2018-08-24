@@ -2,9 +2,9 @@ package util;
 
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
+import model.Weather;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import weather.Weather;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

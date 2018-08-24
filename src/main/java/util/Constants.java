@@ -1,7 +1,7 @@
 package util;
 
-import weather.TempUnit;
-import weather.Weather;
+import model.TempUnit;
+import model.Weather;
 
 import java.util.ArrayList;
 

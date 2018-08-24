@@ -14,10 +14,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.Temperature;
 import org.joda.time.format.DateTimeFormat;
 import util.Constants;
 import util.FileLoad;
-import weather.Temperature;
 
 
 public class SettingsPage {

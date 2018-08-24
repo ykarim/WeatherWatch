@@ -1,5 +1,7 @@
 package net.response.parser.owm;
 
+import model.Temperature;
+import model.Weather;
 import net.response.WeatherResponseParser;
 import net.response.data.WeatherConditionsResponse;
 import net.response.data.WeatherForecastResponse;
@@ -9,8 +11,6 @@ import org.joda.time.DateTime;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import util.Constants;
-import weather.Temperature;
-import weather.Weather;
 
 import java.io.IOException;
 import java.util.ArrayList;

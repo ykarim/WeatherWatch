@@ -1,14 +1,14 @@
 package notification;
 
 import javafx.application.Platform;
+import model.Forecast;
+import model.Weather;
 import notification.events.WeatherEvent;
 import notification.view.NotificationDisplay;
 import org.joda.time.DateTime;
 import util.Constants;
 import watcher.WatchDAO;
 import watcher.Watcher;
-import weather.Forecast;
-import weather.Weather;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

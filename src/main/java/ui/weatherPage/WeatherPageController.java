@@ -2,9 +2,9 @@ package ui.weatherPage;
 
 import dao.WeatherDAO;
 import javafx.scene.image.Image;
+import model.Temperature;
+import model.Weather;
 import util.Constants;
-import weather.Temperature;
-import weather.Weather;
 
 import java.math.RoundingMode;
 

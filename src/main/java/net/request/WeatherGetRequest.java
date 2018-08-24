@@ -1,8 +1,8 @@
 package net.request;
 
+import model.Location;
+import model.TempUnit;
 import org.apache.http.client.methods.HttpGet;
-import weather.Location;
-import weather.TempUnit;
 
 import java.net.URI;
 

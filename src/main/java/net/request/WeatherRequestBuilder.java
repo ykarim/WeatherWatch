@@ -1,9 +1,9 @@
 package net.request;
 
+import model.Location;
 import net.Subscription;
 import net.request.openweathermap.OWMWeatherGetRequest;
 import util.Constants;
-import weather.Location;
 
 import java.net.URI;
 

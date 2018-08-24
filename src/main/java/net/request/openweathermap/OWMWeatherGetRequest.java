@@ -1,9 +1,9 @@
 package net.request.openweathermap;
 
+import model.Location;
+import model.TempUnit;
 import net.request.WeatherGetRequest;
 import org.apache.http.client.utils.URIBuilder;
-import weather.Location;
-import weather.TempUnit;
 
 import java.net.URI;
 import java.net.URISyntaxException;

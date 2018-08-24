@@ -6,9 +6,9 @@ import javafx.geometry.HPos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import model.Forecast;
 import watcher.WatchDAO;
 import watcher.Watcher;
-import weather.Forecast;
 
 import java.util.List;
 

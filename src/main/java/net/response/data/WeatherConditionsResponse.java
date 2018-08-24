@@ -1,8 +1,8 @@
 package net.response.data;
 
+import model.Weather;
 import net.response.WeatherResponse;
 import org.apache.http.StatusLine;
-import weather.Weather;
 
 public class WeatherConditionsResponse implements WeatherResponse {
 

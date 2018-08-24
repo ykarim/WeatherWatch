@@ -1,9 +1,9 @@
 package notification.events;
 
+import model.Forecast;
+import model.Weather;
 import org.joda.time.DateTime;
 import util.Constants;
-import weather.Forecast;
-import weather.Weather;
 
 public class WeatherEvent {
 
