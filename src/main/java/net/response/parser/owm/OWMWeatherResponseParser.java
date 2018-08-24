@@ -1,6 +1,5 @@
 package net.response.parser.owm;
 
-import net.response.WeatherResponse;
 import net.response.WeatherResponseParser;
 import net.response.data.WeatherConditionsResponse;
 import net.response.data.WeatherForecastResponse;
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 public class OWMWeatherResponseParser extends WeatherResponseParser {
 
     @Override
-    public WeatherResponse parseConditionsResponse(HttpResponse response) throws IOException {
+    public WeatherConditionsResponse parseConditionsResponse(HttpResponse response) throws IOException {
         if (response.getEntity() != null && response.getStatusLine().getStatusCode() == 200) {
             return new WeatherConditionsResponse(response.getStatusLine(),
                     extractWeatherDataFromResponse(new JSONObject(EntityUtils.toString(response.getEntity()))));
@@ -30,7 +29,7 @@ public class OWMWeatherResponseParser extends WeatherResponseParser {
     }
 
     @Override
-    public WeatherResponse parseForecastResponse(HttpResponse response) throws IOException {
+    public WeatherForecastResponse parseForecastResponse(HttpResponse response) throws IOException {
         if (response.getEntity() != null && response.getStatusLine().getStatusCode() == 200) {
             JSONObject jsonResponse = new JSONObject(EntityUtils.toString(response.getEntity()));
             JSONArray forecastArray = jsonResponse.getJSONArray("list");

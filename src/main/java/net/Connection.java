@@ -12,9 +12,15 @@ import java.io.IOException;
 public class Connection {
 
     private static CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-
     private static OWMWeatherResponseParser owmWeatherResponseParser = new OWMWeatherResponseParser();
 
+    /**
+     * Depending on API used, passes response to API's respective response parser to further process
+     *
+     * @param requestFunction API function called
+     * @param response        response received from API
+     * @return WeatherResponse containing processed data of response
+     */
     private static WeatherResponse processResponse(WeatherRequest.RequestFunction requestFunction, HttpResponse response) {
         try {
             switch (Subscription.getCurrentSubscriptionProvider()) {
@@ -29,6 +35,11 @@ public class Connection {
         return null;
     }
 
+    /**
+     * Sends request to API
+     * @param request to send
+     * @return HttpResponse received from API
+     */
     private HttpResponse executeRequest(WeatherRequest request) {
         HttpResponse response = null;
         try {
