@@ -3,7 +3,7 @@ package notification.view;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import notification.events.WeatherEvent;
-import ui.ViewConstants;
+import ui.util.ViewConstants;
 import ui.weatherPage.WeatherPage;
 
 public class NotificationDisplay {

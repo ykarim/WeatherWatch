@@ -2,6 +2,7 @@ package ui.util;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import util.FileImport;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,9 @@ public class SceneManager {
     //TODO: Take in bundle in add() and initialize controller
     public static void initProgram(Stage stage, AppScene appScene) {
         SceneManager.stage = stage;
-        SceneManager.mainScene = new Scene(appScene.start(), 500, 300);
+        stage.setTitle(ViewConstants.PROGRAM_TITLE);
+        stage.getIcons().add(FileImport.importImage(FileImport.importFile(ViewConstants.PROGRAM_ICON_LOCATION)));
+        SceneManager.mainScene = new Scene(appScene.start(), ViewConstants.PROGRAM_WIDTH, ViewConstants.PROGRAM_HEIGHT);
         SceneManager.currentScene = appScene;
 
         //Add initial scene to scenes list
