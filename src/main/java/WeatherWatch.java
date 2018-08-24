@@ -1,5 +1,3 @@
-package weatherwatch;
-
 import javafx.application.Application;
 import notification.NotificationService;
 import ui.App;
