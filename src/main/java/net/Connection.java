@@ -21,7 +21,7 @@ public class Connection {
      * @param response        response received from API
      * @return WeatherResponse containing processed data of response
      */
-    private static WeatherResponse processResponse(WeatherRequest.RequestFunction requestFunction, HttpResponse response) {
+    static WeatherResponse processResponse(WeatherRequest.RequestFunction requestFunction, HttpResponse response) {
         try {
             switch (Subscription.getCurrentSubscriptionProvider()) {
                 default:
@@ -40,7 +40,7 @@ public class Connection {
      * @param request to send
      * @return HttpResponse received from API
      */
-    private HttpResponse executeRequest(WeatherRequest request) {
+    static HttpResponse executeRequest(WeatherRequest request) {
         HttpResponse response = null;
         try {
             response = httpClient.execute(request.getRequest());
