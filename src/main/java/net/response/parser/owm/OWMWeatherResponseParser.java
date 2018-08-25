@@ -1,5 +1,6 @@
 package net.response.parser.owm;
 
+import model.Location;
 import model.Temperature;
 import model.Weather;
 import net.response.WeatherResponseParser;
@@ -20,8 +21,16 @@ public class OWMWeatherResponseParser extends WeatherResponseParser {
     @Override
     public WeatherConditionsResponse parseConditionsResponse(HttpResponse response) throws IOException {
         if (response.getEntity() != null && response.getStatusLine().getStatusCode() == 200) {
-            return new WeatherConditionsResponse(response.getStatusLine(),
-                    extractWeatherDataFromResponse(new JSONObject(EntityUtils.toString(response.getEntity()))));
+            JSONObject jsonObject = new JSONObject(EntityUtils.toString(response.getEntity()));
+            Weather extractedWeatherData = extractWeatherDataFromResponse(jsonObject);
+
+            //Extract location data from response and store in weather object
+            //Location data from forecast response is stored in name string and sys object
+            Location conditionsLocation = new Location(jsonObject.getString("name"),
+                    jsonObject.getJSONObject("sys").getString("country"));
+            extractedWeatherData.setLocation(conditionsLocation);
+
+            return new WeatherConditionsResponse(response.getStatusLine(), extractedWeatherData);
         }
 
         //TODO: Send error back (mb include in WeatherResponse)
@@ -34,9 +43,16 @@ public class OWMWeatherResponseParser extends WeatherResponseParser {
             JSONObject jsonResponse = new JSONObject(EntityUtils.toString(response.getEntity()));
             JSONArray forecastArray = jsonResponse.getJSONArray("list");
 
+            //Extract location data from response and store in weather objects
+            //Location data from forecast response is stored in city object
+            JSONObject cityObject = jsonResponse.getJSONObject("city");
+            Location forecastLocation = new Location(cityObject.getString("name"), cityObject.getString("country"));
+
             ArrayList<Weather> forecasts = new ArrayList<>();
             for (int index = 0; index < forecastArray.length(); index++) {
-                forecasts.add(extractWeatherDataFromResponse(forecastArray.getJSONObject(index)));
+                Weather extractedWeather = extractWeatherDataFromResponse(forecastArray.getJSONObject(index));
+                extractedWeather.setLocation(forecastLocation);
+                forecasts.add(extractedWeather);
             }
 
             return new WeatherForecastResponse(response.getStatusLine(), forecasts);
