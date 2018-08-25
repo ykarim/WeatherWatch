@@ -1,0 +1,8 @@
+.titlePane {
+    -fx-background-color: #303F9F;
+    -fx-text-fill: white;
+}
+
+.titleLabel {
+    -fx-text-fill: white;
+}

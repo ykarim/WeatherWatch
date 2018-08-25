@@ -1,18 +1,11 @@
 package util;
 
+import model.Location;
 import model.TempUnit;
-import model.Weather;
-
-import java.util.ArrayList;
 
 public class Constants {
 
-    public static boolean FIRST_RUN = false;
-
-    public static Boolean PREFER_CITY_NAME_OVER_ZIP = true;
-    public static String PREFERRED_CITY_NAME;
-    public static String PREFERRED_ZIP;
-    public static String PREFERRED_COUNTRY_CODE = "us";
+    public static Location PREFERRED_LOCATION;
 
     public static TempUnit PREFERRED_UNIT = TempUnit.FAHRENHEIT;
 
@@ -29,6 +22,6 @@ public class Constants {
     public static String DATE_TIME_FORMAT = "hh:mm a";
 
     public static int NOTIFY_HOURS_AHEAD = 1;
-    public static ArrayList<Weather.WeatherCondition> CONDITIONS_TO_TRACK = new ArrayList<>();
+//    public static ArrayList<> CONDITIONS_TO_TRACK = new ArrayList<>();
 
 }

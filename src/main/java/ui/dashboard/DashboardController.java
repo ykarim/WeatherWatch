@@ -1,18 +1,26 @@
 package ui.dashboard;
 
+import com.jfoenix.controls.JFXButton;
 import dao.WeatherDAO;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import ui.settings.SettingsScene;
 import ui.util.AppController;
 import ui.util.Bundle;
-import watcher.WatchDAO;
-import watcher.Watcher;
+import ui.util.SceneManager;
 
-public class DashboardController implements AppController, Watcher {
+public class DashboardController implements AppController {
 
     @FXML
     private VBox vBox_weatherPane;
+
+    @FXML
+    private JFXButton btn_refresh;
+
+    @FXML
+    private JFXButton btn_settings;
 
     @FXML
     private Label lbl_timeText;
@@ -34,16 +42,26 @@ public class DashboardController implements AppController, Watcher {
 
     @Override
     public void initialize(Bundle dataBundle) {
-        WatchDAO.addWatcher(this);
+
     }
 
+    /**
+     *
+     */
     @Override
     public void refresh() {
+        //Pull new weather data
+
 
     }
 
-    @Override
-    public void updateData(Object updatedData) {
+    @FXML
+    private void handleRefreshButton(ActionEvent event) {
         refresh();
+    }
+
+    @FXML
+    private void handleSettingsButton(ActionEvent event) {
+        SceneManager.addScene(new SettingsScene());
     }
 }

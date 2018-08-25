@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
@@ -11,6 +13,26 @@
               prefHeight="500.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
+                <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity">
+                    <children>
+                        <JFXButton fx:id="btn_refresh" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY"
+                                   maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false"
+                                   onAction="#handleRefreshButton">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="REFRESH" size="24.0" strokeType="OUTSIDE"
+                                                     strokeWidth="0.0"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btn_settings" alignment="CENTER_RIGHT" buttonType="RAISED"
+                                   contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity"
+                                   mnemonicParsing="false" onAction="#handleSettingsButton">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="GEAR" size="24.0" strokeType="OUTSIDE"
+                                                     strokeWidth="0.0"/>
+                            </graphic>
+                        </JFXButton>
+                    </children>
+                </HBox>
                 <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="230.0"
                       prefWidth="260.0" VBox.vgrow="ALWAYS">
                     <children>
