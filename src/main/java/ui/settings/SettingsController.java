@@ -30,6 +30,11 @@ public class SettingsController implements AppController {
     @FXML
     private JFXButton btn_submit;
 
+    /**
+     * Initializes scene by prepopulating all fields
+     *
+     * @param bundle
+     */
     @Override
     public void initialize(Bundle bundle) {
         toggle_unit = new ToggleGroup();
@@ -75,7 +80,9 @@ public class SettingsController implements AppController {
     }
 
     /**
-     * Refresh not needed as
+     * Returns to previous dashboard scene without making any changes
+     * Refresh not needed as no data was manipulated
+     * TODO: Check if user made any changes and show confirmation dialog
      *
      * @param event
      */
@@ -85,7 +92,9 @@ public class SettingsController implements AppController {
     }
 
     /**
+     * Saves all data and returns to refreshed dashboard scene
      *
+     * @param event
      */
     @FXML
     private void handleSubmitButton(ActionEvent event) {
