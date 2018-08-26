@@ -11,8 +11,8 @@
             xmlns="http://javafx.com/javafx/8.0.121" fx:controller="ui.dashboard.DashboardController">
     <children>
         <VBox fx:id="vBox_weatherPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-              prefHeight="500.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              prefHeight="500.0" prefWidth="300.0" spacing="10.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity">
                     <children>
@@ -34,7 +34,7 @@
                         </JFXButton>
                     </children>
                 </HBox>
-                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="230.0"
+                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="220.0"
                       prefWidth="260.0" VBox.vgrow="ALWAYS">
                     <children>
                         <Label fx:id="lbl_timeText" alignment="CENTER" contentDisplay="CENTER"
@@ -70,7 +70,7 @@
                         <Insets/>
                     </VBox.margin>
                 </VBox>
-                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="230.0"
+                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="220.0"
                       prefWidth="260.0" VBox.vgrow="ALWAYS"/>
             </children>
             <padding>
