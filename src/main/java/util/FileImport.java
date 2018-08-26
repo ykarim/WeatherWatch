@@ -37,6 +37,8 @@ public class FileImport {
 
     /**
      * Formats file path to remove any encoding such as "%20" and returns newly created file
+     * TODO: Find use case as doesn't work for local res files
+     * TODO: After importing file, check if file exists (aka function most likely worked) tho some cases where works but doesnt exist
      *
      * @param path path of file
      * @return file made using specific path

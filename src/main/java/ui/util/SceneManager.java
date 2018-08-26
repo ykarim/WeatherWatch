@@ -17,7 +17,7 @@ public class SceneManager {
     public static void initProgram(Stage stage, AppScene appScene) {
         SceneManager.stage = stage;
         stage.setTitle(ViewConstants.PROGRAM_TITLE);
-        stage.getIcons().add(FileImport.importImage(FileImport.importFile(ViewConstants.PROGRAM_ICON_LOCATION)));
+        stage.getIcons().add(FileImport.importImage(FileImport.importLocalFile(ViewConstants.PROGRAM_ICON_LOCATION)));
         SceneManager.mainScene = new Scene(appScene.start(), ViewConstants.PROGRAM_WIDTH, ViewConstants.PROGRAM_HEIGHT);
         SceneManager.currentScene = appScene;
 
