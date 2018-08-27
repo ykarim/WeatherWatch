@@ -2,6 +2,8 @@ package model;
 
 import org.joda.time.DateTime;
 
+import java.net.URL;
+
 public class Weather {
 
     private Location location;
@@ -12,9 +14,10 @@ public class Weather {
     private DateTime sunriseTime;
     private DateTime sunsetTime;
     private DateTime weatherTime;
+    private URL imageURL;
 
     public Weather(Location location, Temperature temperature, String condition, Double humidity, Double pressure,
-                   DateTime sunriseTime, DateTime sunsetTime, DateTime weatherTime) {
+                   DateTime sunriseTime, DateTime sunsetTime, DateTime weatherTime, URL imageURL) {
         this.location = location;
         this.temperature = temperature;
         this.condition = condition;
@@ -23,6 +26,7 @@ public class Weather {
         this.sunriseTime = sunriseTime;
         this.sunsetTime = sunsetTime;
         this.weatherTime = weatherTime;
+        this.imageURL = imageURL;
     }
 
     public Location getLocation() {
@@ -87,5 +91,13 @@ public class Weather {
 
     public void setWeatherTime(DateTime weatherTime) {
         this.weatherTime = weatherTime;
+    }
+
+    public URL getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(URL imageURL) {
+        this.imageURL = imageURL;
     }
 }

@@ -14,6 +14,8 @@ import org.json.JSONObject;
 import util.Constants;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class OWMWeatherResponseParser extends WeatherResponseParser {
@@ -75,7 +77,15 @@ public class OWMWeatherResponseParser extends WeatherResponseParser {
         DateTime sunsetTime = new DateTime(sysObj.getLong("sunset") * 1000L);
         DateTime lastUpdateTime = new DateTime(weatherJSONObject.getLong("dt") * 1000L);
 
+        final String iconURLBase = "http://openweathermap.org/img/w/";
+        URL iconURL = null;
+        try {
+            iconURL = new URL(iconURLBase + weatherObj.getString("icon"));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         return new Weather(null, temperature, condition, humidityValue, pressureValue,
-                sunriseTime, sunsetTime, lastUpdateTime);
+                sunriseTime, sunsetTime, lastUpdateTime, iconURL);
     }
 }
