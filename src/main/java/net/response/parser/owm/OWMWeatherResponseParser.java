@@ -73,14 +73,20 @@ public class OWMWeatherResponseParser extends WeatherResponseParser {
         String condition = weatherJSONObject.getJSONArray("weather").getJSONObject(0).getString("main");
         double humidityValue = mainObj.getDouble("humidity");
         double pressureValue = mainObj.getDouble("pressure");
-        DateTime sunriseTime = new DateTime(sysObj.getLong("sunrise") * 1000L);
-        DateTime sunsetTime = new DateTime(sysObj.getLong("sunset") * 1000L);
+
+        DateTime sunriseTime = null, sunsetTime = null;
+        if (sysObj.has("sunrise")) {
+            sunriseTime = new DateTime(sysObj.getLong("sunrise") * 1000L);
+            sunsetTime = new DateTime(sysObj.getLong("sunset") * 1000L);
+        }
+
         DateTime lastUpdateTime = new DateTime(weatherJSONObject.getLong("dt") * 1000L);
 
         final String iconURLBase = "http://openweathermap.org/img/w/";
+        final String iconURLExtension = ".png";
         URL iconURL = null;
         try {
-            iconURL = new URL(iconURLBase + weatherObj.getString("icon"));
+            iconURL = new URL(iconURLBase + weatherObj.getString("icon") + iconURLExtension);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

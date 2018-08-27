@@ -8,8 +8,10 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import model.Weather;
 import net.APIAccess;
+import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import ui.forecastBox.ForecastBox;
 import ui.settings.SettingsScene;
 import ui.util.AppController;
 import ui.util.Bundle;
@@ -42,6 +44,9 @@ public class DashboardController implements AppController {
     @FXML
     private Label lbl_location;
 
+    @FXML
+    private GridPane gridPane_forecasts;
+
     private WeatherDAO weatherDAO = new WeatherDAO();
 
     public DashboardController() {
@@ -52,16 +57,7 @@ public class DashboardController implements AppController {
     public void initialize(Bundle dataBundle) {
         if (weatherDAO.getLatestWeather() != null) {
             Weather currentWeather = weatherDAO.getLatestWeather();
-
-            vBox_weatherPane.setBackground(new Background(getBackgroundImage(currentWeather.getCondition())));
-            lbl_currentTemp.setText(
-                    currentWeather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT).setScale(0).toPlainString());
-            lbl_currentCond.setText(currentWeather.getCondition());
-            lbl_location.setText(currentWeather.getLocation().toString());
-
-            //Create date pattern and set time label to last received weather data time
-            DateTimeFormatter timeFormat = DateTimeFormat.forPattern("hh:mm a");
-            lbl_timeText.setText("Last Updated: " + currentWeather.getWeatherTime().toString(timeFormat));
+            setWeatherConditionFields(currentWeather);
         }
     }
 
@@ -72,16 +68,12 @@ public class DashboardController implements AppController {
     public void refresh() {
         //Pull new weather data
         APIAccess.requestWeatherConditions(Constants.PREFERRED_LOCATION);
-        Weather weather = weatherDAO.getLatestWeather();
+        setWeatherConditionFields(weatherDAO.getLatestWeather());
 
-        vBox_weatherPane.setBackground(new Background(getBackgroundImage(weather.getCondition())));
-        lbl_currentTemp.setText(weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT).setScale(0, BigDecimal.ROUND_HALF_UP).toPlainString());
-        lbl_currentCond.setText(weather.getCondition());
-        lbl_location.setText(weather.getLocation().toString());
-
-        //Create date pattern and set time label to last received weather data time
-        DateTimeFormatter timeFormat = DateTimeFormat.forPattern("hh:mm a");
-        lbl_timeText.setText("Last Updated: " + weather.getWeatherTime().toString(timeFormat));
+        APIAccess.requestWeatherForecast(Constants.PREFERRED_LOCATION);
+        setWeatherForecastFields(weatherDAO.getWeatherForDay(new DateTime()),
+                weatherDAO.getWeatherForDay(new DateTime().plusDays(1)),
+                weatherDAO.getWeatherForDay(new DateTime().plusDays(2)));
     }
 
     @FXML
@@ -92,6 +84,32 @@ public class DashboardController implements AppController {
     @FXML
     private void handleSettingsButton(ActionEvent event) {
         SceneManager.addScene(new SettingsScene());
+    }
+
+    private void setWeatherConditionFields(Weather weather) {
+        vBox_weatherPane.setBackground(new Background(getBackgroundImage(weather.getCondition())));
+        lbl_currentTemp.setText(weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT).setScale(0, BigDecimal.ROUND_HALF_UP).toPlainString());
+        lbl_currentCond.setText(weather.getCondition());
+        lbl_location.setText(weather.getLocation().toString());
+
+        //Create date pattern and set time label to last received weather data time
+        DateTimeFormatter timeFormat = DateTimeFormat.forPattern("hh:mm a");
+        lbl_timeText.setText("Last Updated: " + weather.getWeatherTime().toString(timeFormat));
+    }
+
+    /**
+     * Fills forecastPane by creating ForecastBox for current, next day, and day after next day's weather
+     *
+     * @param today's            weather data
+     * @param tomorrow's         weather data
+     * @param dayAfterTomorrow's weather data
+     */
+    private void setWeatherForecastFields(Weather today, Weather tomorrow, Weather dayAfterTomorrow) {
+        gridPane_forecasts.getChildren().clear();
+
+        gridPane_forecasts.add(new ForecastBox(today), 0, 0);
+        gridPane_forecasts.add(new ForecastBox(tomorrow), 1, 0);
+        gridPane_forecasts.add(new ForecastBox(dayAfterTomorrow), 2, 0);
     }
 
     /**
