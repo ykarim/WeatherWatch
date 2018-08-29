@@ -101,9 +101,9 @@ public class DashboardController implements AppController {
     private void setWeatherForecastFields() {
         gridPane_forecasts.getChildren().clear();
 
-        Weather today = weatherDAO.findWeatherByTime(new DateTime().plusHours(12));
-        Weather tomorrow = weatherDAO.findWeatherByTime(new DateTime().plusDays(1).plusHours(12));
-        Weather dayAfterTomorrow = weatherDAO.findWeatherByTime(new DateTime().plusDays(2).plusHours(12));
+        Weather today = weatherDAO.findWeatherByTime(new DateTime().hourOfDay().setCopy(12));
+        Weather tomorrow = weatherDAO.findWeatherByTime(new DateTime().plusDays(1).hourOfDay().setCopy(12));
+        Weather dayAfterTomorrow = weatherDAO.findWeatherByTime(new DateTime().plusDays(2).hourOfDay().setCopy(12));
 
         gridPane_forecasts.add(new ForecastBox(today), 0, 0);
         gridPane_forecasts.add(new ForecastBox(tomorrow), 1, 0);
