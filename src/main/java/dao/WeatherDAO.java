@@ -2,6 +2,7 @@ package dao;
 
 import model.Weather;
 import org.joda.time.DateTime;
+import org.joda.time.Hours;
 import util.Constants;
 import watcher.WatchDAO;
 
@@ -42,6 +43,7 @@ public class WeatherDAO {
      * @param dayDate requested date to retrieve weather
      * @return weather object of requested date with highest temperature (most likely middle of day)
      */
+    @Deprecated
     public Weather getWeatherForDay(DateTime dayDate) {
         List<Weather> daysWeatherData = new ArrayList<>();
         BigDecimal lowTemp = new BigDecimal(0);
@@ -69,5 +71,35 @@ public class WeatherDAO {
         }
 
         return daysWeather;
+    }
+
+    /**
+     * Searches through weather data to find weather object closest to requested time by comparing hour difference
+     * If hour difference is less than or equal to 3 hours, retrieved weather data is automatically returned
+     * TODO: Improve algorithm complexity and time
+     *
+     * @param date requested date to find closest weather data for
+     * @return weather object with weather time closest to requested date
+     */
+    public Weather findWeatherByTime(DateTime date) {
+        if (weatherData.size() > 0) {
+            Weather closestWeather = weatherData.get(0);
+            int highestHourDiff = Math.abs(Hours.hoursBetween(weatherData.get(0).getWeatherTime(), date).getHours());
+            for (int index = 1; index < weatherData.size(); index++) {
+                int currentHourDiff = Math.abs(Hours.hoursBetween(weatherData.get(index).getWeatherTime(), date).getHours());
+                if (currentHourDiff < highestHourDiff) {
+                    highestHourDiff = currentHourDiff;
+                    closestWeather = weatherData.get(index);
+
+                    if (currentHourDiff <= 3) {
+                        break;
+                    }
+                }
+            }
+
+            return closestWeather;
+        } else {
+            return null;
+        }
     }
 }

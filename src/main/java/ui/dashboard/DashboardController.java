@@ -71,9 +71,7 @@ public class DashboardController implements AppController {
         setWeatherConditionFields(weatherDAO.getLatestWeather());
 
         APIAccess.requestWeatherForecast(Constants.PREFERRED_LOCATION);
-        setWeatherForecastFields(weatherDAO.getWeatherForDay(new DateTime()),
-                weatherDAO.getWeatherForDay(new DateTime().plusDays(1)),
-                weatherDAO.getWeatherForDay(new DateTime().plusDays(2)));
+        setWeatherForecastFields();
     }
 
     @FXML
@@ -98,14 +96,14 @@ public class DashboardController implements AppController {
     }
 
     /**
-     * Fills forecastPane by creating ForecastBox for current, next day, and day after next day's weather
-     *
-     * @param today's            weather data
-     * @param tomorrow's         weather data
-     * @param dayAfterTomorrow's weather data
+     * Fills forecastPane by creating ForecastBox for next 2 days of weather
      */
-    private void setWeatherForecastFields(Weather today, Weather tomorrow, Weather dayAfterTomorrow) {
+    private void setWeatherForecastFields() {
         gridPane_forecasts.getChildren().clear();
+
+        Weather today = weatherDAO.findWeatherByTime(new DateTime().plusHours(12));
+        Weather tomorrow = weatherDAO.findWeatherByTime(new DateTime().plusDays(1).plusHours(12));
+        Weather dayAfterTomorrow = weatherDAO.findWeatherByTime(new DateTime().plusDays(2).plusHours(12));
 
         gridPane_forecasts.add(new ForecastBox(today), 0, 0);
         gridPane_forecasts.add(new ForecastBox(tomorrow), 1, 0);
