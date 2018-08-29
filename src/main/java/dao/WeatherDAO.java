@@ -1,5 +1,6 @@
 package dao;
 
+import model.Location;
 import model.Weather;
 import org.joda.time.DateTime;
 import org.joda.time.Hours;
@@ -27,12 +28,24 @@ public class WeatherDAO {
         weatherData.clear();
     }
 
-    public Weather getLatestWeather() {
+    public Weather getLatestWeather(Location location) {
         if (weatherData.size() != 0) {
             return weatherData.get(weatherData.size() - 1);
         } else {
             return null;
         }
+    }
+
+    public List<Weather> getWeatherForLocation(Location location) {
+        List<Weather> locationWeather = new ArrayList<>();
+        for (Weather weather : weatherData) {
+            if (weather.getLocation().getCity().equalsIgnoreCase(location.getCity())
+                    && weather.getLocation().getCountry().equalsIgnoreCase(location.getCountry())) {
+                locationWeather.add(weather); //might not work since when resp. received location is set from response
+            }
+        }
+
+        return locationWeather;
     }
 
     //TODO: Optimize data structure and algorithm
@@ -81,15 +94,16 @@ public class WeatherDAO {
      * @param date requested date to find closest weather data for
      * @return weather object with weather time closest to requested date
      */
-    public Weather findWeatherByTime(DateTime date) {
-        if (weatherData.size() > 0) {
-            Weather closestWeather = weatherData.get(0);
-            int highestHourDiff = Math.abs(Hours.hoursBetween(weatherData.get(0).getWeatherTime(), date).getHours());
-            for (int index = 1; index < weatherData.size(); index++) {
-                int currentHourDiff = Math.abs(Hours.hoursBetween(weatherData.get(index).getWeatherTime(), date).getHours());
+    public Weather findWeatherByTime(Location location, DateTime date) {
+        List<Weather> locationWeather = getWeatherForLocation(location);
+        if (locationWeather.size() > 0) {
+            Weather closestWeather = locationWeather.get(0);
+            int highestHourDiff = Math.abs(Hours.hoursBetween(closestWeather.getWeatherTime(), date).getHours());
+            for (int index = 1; index < locationWeather.size(); index++) {
+                int currentHourDiff = Math.abs(Hours.hoursBetween(locationWeather.get(index).getWeatherTime(), date).getHours());
                 if (currentHourDiff < highestHourDiff) {
                     highestHourDiff = currentHourDiff;
-                    closestWeather = weatherData.get(index);
+                    closestWeather = locationWeather.get(index);
 
                     if (currentHourDiff <= 3) {
                         break;

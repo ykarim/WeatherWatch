@@ -55,8 +55,8 @@ public class DashboardController implements AppController {
 
     @Override
     public void initialize(Bundle dataBundle) {
-        if (weatherDAO.getLatestWeather() != null) {
-            Weather currentWeather = weatherDAO.getLatestWeather();
+        if (weatherDAO.getLatestWeather(Constants.PREFERRED_LOCATION) != null) {
+            Weather currentWeather = weatherDAO.getLatestWeather(Constants.PREFERRED_LOCATION);
             setWeatherConditionFields(currentWeather);
         }
     }
@@ -68,7 +68,7 @@ public class DashboardController implements AppController {
     public void refresh() {
         //Pull new weather data
         APIAccess.requestWeatherConditions(Constants.PREFERRED_LOCATION);
-        setWeatherConditionFields(weatherDAO.getLatestWeather());
+        setWeatherConditionFields(weatherDAO.getLatestWeather(Constants.PREFERRED_LOCATION));
 
         APIAccess.requestWeatherForecast(Constants.PREFERRED_LOCATION);
         setWeatherForecastFields();
@@ -101,9 +101,12 @@ public class DashboardController implements AppController {
     private void setWeatherForecastFields() {
         gridPane_forecasts.getChildren().clear();
 
-        Weather today = weatherDAO.findWeatherByTime(new DateTime().hourOfDay().setCopy(12));
-        Weather tomorrow = weatherDAO.findWeatherByTime(new DateTime().plusDays(1).hourOfDay().setCopy(12));
-        Weather dayAfterTomorrow = weatherDAO.findWeatherByTime(new DateTime().plusDays(2).hourOfDay().setCopy(12));
+        Weather today = weatherDAO.findWeatherByTime(Constants.PREFERRED_LOCATION,
+                new DateTime().hourOfDay().setCopy(12));
+        Weather tomorrow = weatherDAO.findWeatherByTime(Constants.PREFERRED_LOCATION,
+                new DateTime().plusDays(1).hourOfDay().setCopy(12));
+        Weather dayAfterTomorrow = weatherDAO.findWeatherByTime(Constants.PREFERRED_LOCATION,
+                new DateTime().plusDays(2).hourOfDay().setCopy(12));
 
         gridPane_forecasts.add(new ForecastBox(today), 0, 0);
         gridPane_forecasts.add(new ForecastBox(tomorrow), 1, 0);
