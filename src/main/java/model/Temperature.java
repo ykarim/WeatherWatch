@@ -36,8 +36,26 @@ public class Temperature {
         this.temperatureValue = temperatureValue;
     }
 
+    //TODO: redundant if temp set using const.pref_unit and used again to get value?
     public BigDecimal getTemperatureValue(TempUnit desiredUnit) {
         return convertTemp(temperatureValue, desiredUnit);
+    }
+
+    public String getTemperatureString(TempUnit unit, int scale) {
+        String tempValString = getTemperatureValue(unit).setScale(scale, BigDecimal.ROUND_HALF_UP).toPlainString();
+
+        //Append degree sign depending on unit requested
+        final String degreeSign = "\u00B0";
+        switch (unit) {
+            case FAHRENHEIT:
+            case CELSIUS:
+                tempValString += degreeSign;
+                break;
+            case KELVIN:
+                break;
+        }
+
+        return tempValString;
     }
 
     private BigDecimal convertTemp(BigDecimal tempVal, TempUnit desiredUnit) {
@@ -63,5 +81,10 @@ public class Temperature {
             }
         }
         return tempVal;
+    }
+
+    @Override
+    public String toString() {
+        return getTemperatureString(unit, 0);
     }
 }

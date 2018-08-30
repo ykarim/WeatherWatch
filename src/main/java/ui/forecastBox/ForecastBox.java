@@ -13,13 +13,12 @@ import util.FileImport;
 
 import javax.imageio.ImageIO;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.Locale;
 
 public class ForecastBox extends VBox {
 
     @FXML
-    private Label lbl_day, lbl_temps;
+    private Label lbl_day, lbl_highTemp, lbl_lowTemp;
 
     @FXML
     private AnchorPane anchorPane_icon;
@@ -59,7 +58,9 @@ public class ForecastBox extends VBox {
         this();
 
         lbl_day.setText(weather.getWeatherTime().dayOfWeek().getAsText(Locale.getDefault()));
-        lbl_temps.setText(weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT).setScale(0, BigDecimal.ROUND_HALF_UP).toPlainString());
+        lbl_highTemp.setText(weather.getHighTemperature().getTemperatureString(Constants.PREFERRED_UNIT, 0));
+        lbl_lowTemp.setText(weather.getLowTemperature().getTemperatureString(Constants.PREFERRED_UNIT, 0));
+
         try {
             imgView_icon.setImage(SwingFXUtils.toFXImage(ImageIO.read(weather.getImageURL()), null));
         } catch (IOException e) {

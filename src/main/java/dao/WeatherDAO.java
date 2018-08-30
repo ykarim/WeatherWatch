@@ -1,6 +1,7 @@
 package dao;
 
 import model.Location;
+import model.Temperature;
 import model.Weather;
 import org.joda.time.DateTime;
 import org.joda.time.Hours;
@@ -48,40 +49,48 @@ public class WeatherDAO {
         return locationWeather;
     }
 
-    //TODO: Optimize data structure and algorithm
-
-    /**
-     * Finds all weather data of requested date and retrieves low and high temperatures
-     *
-     * @param dayDate requested date to retrieve weather
-     * @return weather object of requested date with highest temperature (most likely middle of day)
-     */
-    @Deprecated
-    public Weather getWeatherForDay(DateTime dayDate) {
-        List<Weather> daysWeatherData = new ArrayList<>();
-        BigDecimal lowTemp = new BigDecimal(0);
-        BigDecimal maxTemp = new BigDecimal(0);
-
-        Weather daysWeather = null;
-
-        for (Weather weather : weatherData) {
-            if (weather.getWeatherTime().getDayOfMonth() == dayDate.getDayOfMonth()) {
-                daysWeatherData.add(weather);
+    public List<Weather> getWeatherForDate(Location location, DateTime dateTime) {
+        List<Weather> locationWeather = getWeatherForLocation(location);
+        List<Weather> dateWeather = new ArrayList<>();
+        for (Weather weather : locationWeather) {
+            if (weather.getWeatherTime().dayOfYear().equals(dateTime.dayOfYear())) {
+                dateWeather.add(weather);
             }
         }
 
+        return dateWeather;
+    }
+
+    //TODO: Optimize data structure and algorithm
+
+    /**
+     * Finds all weather data of requested date and retrieves calculated low and high temperatures
+     * TODO: Using icon from highest temp weather obj chooses night weather at times
+     *
+     * @param dayDate requested date to retrieve weather
+     * @return weather object of requested date with highest temperature representing day's average weather
+     */
+    public Weather getWeatherForDay(Location location, DateTime dayDate) {
+        List<Weather> daysWeatherData = getWeatherForDate(location, dayDate);
+
+        BigDecimal highTemp = new BigDecimal(0);
+        BigDecimal lowTemp = new BigDecimal(Integer.MAX_VALUE);
+
+        Weather daysWeather = null;
+
         for (Weather weather : daysWeatherData) {
-            if (weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT).compareTo(maxTemp) > 0) {
-                maxTemp = weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT);
+            if (weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT).compareTo(highTemp) > 0) {
+                highTemp = weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT);
                 daysWeather = weather;
-            } else if (weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT).compareTo(maxTemp) == 0) {
-                //Compare timestamps to ensure better icon is used TODO: Should be done by time and finding mid of day
             }
 
             if (weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT).compareTo(lowTemp) < 0) {
                 lowTemp = weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT);
             }
         }
+
+        daysWeather.setHighTemperature(new Temperature(daysWeather.getHighTemperature().getUnit(), highTemp));
+        daysWeather.setLowTemperature(new Temperature(daysWeather.getLowTemperature().getUnit(), lowTemp));
 
         return daysWeather;
     }

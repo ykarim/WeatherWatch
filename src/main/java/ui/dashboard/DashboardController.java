@@ -19,8 +19,6 @@ import ui.util.SceneManager;
 import util.Constants;
 import util.FileImport;
 
-import java.math.BigDecimal;
-
 public class DashboardController implements AppController {
 
     @FXML
@@ -86,7 +84,7 @@ public class DashboardController implements AppController {
 
     private void setWeatherConditionFields(Weather weather) {
         vBox_weatherPane.setBackground(new Background(getBackgroundImage(weather.getCondition())));
-        lbl_currentTemp.setText(weather.getTemperature().getTemperatureValue(Constants.PREFERRED_UNIT).setScale(0, BigDecimal.ROUND_HALF_UP).toPlainString());
+        lbl_currentTemp.setText(weather.getTemperature().getTemperatureString(Constants.PREFERRED_UNIT, 0));
         lbl_currentCond.setText(weather.getCondition());
         lbl_location.setText(weather.getLocation().toString());
 
@@ -101,12 +99,10 @@ public class DashboardController implements AppController {
     private void setWeatherForecastFields() {
         gridPane_forecasts.getChildren().clear();
 
-        Weather today = weatherDAO.findWeatherByTime(Constants.PREFERRED_LOCATION,
-                new DateTime().hourOfDay().setCopy(12));
-        Weather tomorrow = weatherDAO.findWeatherByTime(Constants.PREFERRED_LOCATION,
-                new DateTime().plusDays(1).hourOfDay().setCopy(12));
-        Weather dayAfterTomorrow = weatherDAO.findWeatherByTime(Constants.PREFERRED_LOCATION,
-                new DateTime().plusDays(2).hourOfDay().setCopy(12));
+        Weather today = weatherDAO.getWeatherForDay(Constants.PREFERRED_LOCATION, new DateTime());
+        Weather tomorrow = weatherDAO.getWeatherForDay(Constants.PREFERRED_LOCATION, new DateTime().plusDays(1));
+        Weather dayAfterTomorrow = weatherDAO.getWeatherForDay(Constants.PREFERRED_LOCATION,
+                new DateTime().plusDays(2));
 
         gridPane_forecasts.add(new ForecastBox(today), 0, 0);
         gridPane_forecasts.add(new ForecastBox(tomorrow), 1, 0);

@@ -5,8 +5,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<fx:root xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefWidth="93.33" spacing="15.0"
-         type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8.0.121">
+<fx:root xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" spacing="15.0" type="javafx.scene.layout.VBox"
+         xmlns="http://javafx.com/javafx/8.0.121">
     <children>
         <Label fx:id="lbl_day" text="Label"/>
         <AnchorPane fx:id="anchorPane_icon" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
@@ -19,10 +19,23 @@
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
             </VBox.margin>
         </AnchorPane>
-        <Label fx:id="lbl_temps" text="Label">
-            <font>
-                <Font size="24.0"/>
-            </font>
-        </Label>
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <children>
+                <Label fx:id="lbl_highTemp" text="Label">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="lbl_lowTemp" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Label"
+                       textAlignment="RIGHT" textFill="GREY">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+            </children>
+            <VBox.margin>
+                <Insets left="10.0" right="10.0"/>
+            </VBox.margin>
+        </HBox>
     </children>
 </fx:root>

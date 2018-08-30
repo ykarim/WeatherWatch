@@ -70,6 +70,11 @@ public class OWMWeatherResponseParser extends WeatherResponseParser {
 
         double tempValue = mainObj.getDouble("temp");
         Temperature temperature = new Temperature(Constants.PREFERRED_UNIT, tempValue);
+        double highTempVal = mainObj.getDouble("temp_max");
+        Temperature highTemperature = new Temperature(Constants.PREFERRED_UNIT, highTempVal);
+        double lowTempVal = mainObj.getDouble("temp_min");
+        Temperature lowTemperature = new Temperature(Constants.PREFERRED_UNIT, lowTempVal);
+
         String condition = weatherJSONObject.getJSONArray("weather").getJSONObject(0).getString("main");
         double humidityValue = mainObj.getDouble("humidity");
         double pressureValue = mainObj.getDouble("pressure");
@@ -91,7 +96,8 @@ public class OWMWeatherResponseParser extends WeatherResponseParser {
             e.printStackTrace();
         }
 
-        return new Weather(null, temperature, condition, humidityValue, pressureValue,
+        return new Weather(null, temperature, highTemperature, lowTemperature,
+                condition, humidityValue, pressureValue,
                 sunriseTime, sunsetTime, lastUpdateTime, iconURL);
     }
 }
