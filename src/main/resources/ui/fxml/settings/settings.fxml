@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -57,8 +58,20 @@
                     <children>
                         <Label text="City:" GridPane.rowIndex="1"/>
                         <Label text="Country:" GridPane.rowIndex="2"/>
-                        <JFXTextField fx:id="txt_city" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                        <JFXTextField fx:id="txt_country" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <JFXTextField fx:id="txt_city" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <validators>
+                                <RequiredFieldValidator message="City Name Required!">
+                                    <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txt_country" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <validators>
+                                <RequiredFieldValidator message="Country Name Required!">
+                                    <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXTextField>
                         <Label text="Location:"/>
                     </children>
                 </GridPane>
@@ -106,7 +119,13 @@
                             </children>
                         </HBox>
                         <Label text="API Key:" GridPane.rowIndex="2"/>
-                        <JFXTextField fx:id="txt_key" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <JFXTextField fx:id="txt_key" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <validators>
+                                <RequiredFieldValidator message="API Key Required!">
+                                    <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXTextField>
                     </children>
                 </GridPane>
                 <HBox alignment="CENTER">

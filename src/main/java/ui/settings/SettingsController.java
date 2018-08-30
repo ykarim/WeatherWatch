@@ -3,6 +3,7 @@ package ui.settings;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleGroup;
@@ -72,6 +73,28 @@ public class SettingsController implements AppController {
         }
 
         txt_key.setText(Subscription.getSubscriptionKey());
+
+        //Add validation as focus listener for text fields
+        txt_city.focusedProperty().addListener(
+                (ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+                    if (!newValue) {
+                        txt_city.validate();
+                    }
+                });
+
+        txt_country.focusedProperty().addListener(
+                (ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+                    if (!newValue) {
+                        txt_country.validate();
+                    }
+                });
+
+        txt_key.focusedProperty().addListener(
+                (ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+                    if (!newValue) {
+                        txt_key.validate();
+                    }
+                });
     }
 
     @Override
@@ -92,36 +115,59 @@ public class SettingsController implements AppController {
     }
 
     /**
-     * Saves all data and returns to refreshed dashboard scene
+     * Validates input and upon receiving proper input, saves all data and returns to refreshed dashboard scene
      *
      * @param event
      */
     @FXML
     private void handleSubmitButton(ActionEvent event) {
-        //Save data
-        if (Constants.PREFERRED_LOCATION == null) {
-            Constants.PREFERRED_LOCATION = new Location(txt_city.getText(), txt_country.getText());
-        } else {
-            Constants.PREFERRED_LOCATION.setCity(txt_city.getText());
-            Constants.PREFERRED_LOCATION.setCountry(txt_country.getText());
+        if (validateInput()) {
+            //Save data
+            if (Constants.PREFERRED_LOCATION == null) {
+                Constants.PREFERRED_LOCATION = new Location(txt_city.getText(), txt_country.getText());
+            } else {
+                Constants.PREFERRED_LOCATION.setCity(txt_city.getText());
+                Constants.PREFERRED_LOCATION.setCountry(txt_country.getText());
+            }
+
+            if (radio_imperial.isSelected()) {
+                Constants.PREFERRED_UNIT = TempUnit.FAHRENHEIT;
+            } else if (radio_metric.isSelected()) {
+                Constants.PREFERRED_UNIT = TempUnit.CELSIUS;
+            } else if (radio_kelvin.isSelected()) {
+                Constants.PREFERRED_UNIT = TempUnit.KELVIN;
+            }
+
+            if (radio_owm.isSelected()) {
+                Subscription.setCurrentSubscriptionProvider(Subscription.Provider.OPEN_WEATHER_MAP);
+            }
+
+            Subscription.setSubscriptionKey(txt_key.getText());
+
+            //Return to weather dashboard and refresh with new information
+            SceneManager.returnToPreviousScene();
+            SceneManager.refreshCurrentScene();
+        }
+    }
+
+    /**
+     * Triggers validation on all text fields and returns boolean representing proper form entry
+     *
+     * @return true if all fields have proper input, false if otherwise
+     */
+    private boolean validateInput() {
+        boolean validInput = true;
+
+        //Validation required as fields may not have received focus yet
+        txt_city.validate();
+        txt_country.validate();
+        txt_key.validate();
+
+        if (txt_country.getText().isEmpty() || txt_city.getText().isEmpty() || txt_key.getText().isEmpty() ||
+                toggle_unit.getSelectedToggle() == null || toggle_provider.getSelectedToggle() == null) {
+            validInput = false;
         }
 
-        if (radio_imperial.isSelected()) {
-            Constants.PREFERRED_UNIT = TempUnit.FAHRENHEIT;
-        } else if (radio_metric.isSelected()) {
-            Constants.PREFERRED_UNIT = TempUnit.CELSIUS;
-        } else if (radio_kelvin.isSelected()) {
-            Constants.PREFERRED_UNIT = TempUnit.KELVIN;
-        }
-
-        if (radio_owm.isSelected()) {
-            Subscription.setCurrentSubscriptionProvider(Subscription.Provider.OPEN_WEATHER_MAP);
-        }
-
-        Subscription.setSubscriptionKey(txt_key.getText());
-
-        //Return to weather dashboard and refresh with new information
-        SceneManager.returnToPreviousScene();
-        SceneManager.refreshCurrentScene();
+        return validInput;
     }
 }
